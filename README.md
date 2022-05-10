@@ -1,4 +1,4 @@
-![Alt text](https://github.com/Technatro-uk/OMHAU/blob/dev/src/logo.svg "OMHAU")
+![Alt text](public\logo512.png "OMHAU")
 
 # Our Mental Health & Us (Development Project)
 
