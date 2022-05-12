@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Technatro-uk/OMHAU/dev/public/logo512.png" alt="OMHAU" width="300")
+<img src="https://raw.githubusercontent.com/Technatro-uk/OMHAU/dev/public/logo512.png" alt="OMHAU" width="300" />
 
 # Our Mental Health & Us (Development Project)
 
