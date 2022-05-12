@@ -7,5 +7,6 @@ Website: [https://ourmentalhealthandus.xx](https://ourmentalhealthandus.xx)
 ### To Do:
 
 - [ ] Update page contents to reflect 'Mental Health content'
-- [ ] Rename pages on Navbar
-- [ ] Add video playlist to 'Resources' page
+- [x] Rename pages on Navbar
+- [x] Add video playlist to 'Resources' page
+- [ ] Add pages/content for: Audiobooks, Podcasts, Support Groups, Journal, Self Help, Community
