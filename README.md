@@ -1,8 +1,8 @@
-![Our Mental Health & Us](https://github.com/Technatro-uk/OMHAU/blob/dev/public/logo192.png?raw=true "OMHAU")
+![Our Mental Health & Us](https://github.com/Technatro-uk/OMHAU/blob/dev/public/logo192.png?raw=true "OMHAU"  width="300" height="300")
 
 # Our Mental Health & Us (Development Project)
 
-Website: [https://ourmentalhealthandus.xx](https://ourmentalhealthandus.xx)
+Website: [https://facebook.com/groups/ourmentalhealthandus](https://ourmentalhealthandus.xx)
 
 ### To Do:
 
