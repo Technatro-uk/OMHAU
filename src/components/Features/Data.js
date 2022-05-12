@@ -1,47 +1,65 @@
 import React from 'react';
-import { BsFillShieldLockFill } from 'react-icons/bs';
-import { IoIosOptions } from 'react-icons/io';
-import { AiOutlineCloudUpload } from 'react-icons/ai';
-import { BiSupport, BiDollar } from 'react-icons/bi';
-import { GrHostMaintenance } from 'react-icons/gr';
-const iconStyle = (Icon) => <Icon size="1rem" color="#0f0f0f" />;
+import { BsJournalText } from 'react-icons/bs';
+import { MdOndemandVideo, MdGroups, MdFitnessCenter } from 'react-icons/md';
+import { FaRegFileAudio,FaPodcast, FaHandsHelping } from 'react-icons/fa';
+import { RiCommunityLine } from 'react-icons/ri';
+const iconStyle = (Icon) => <Icon size="1.5rem" color="#0f0f0f" />;
 
 export const featuresData = [
 	{
-		name: 'Best Security',
-		description: 'We offer the best data security to our clients, which makes us stand out',
-		icon: iconStyle(BsFillShieldLockFill),
+		name: 'Videos',
+		description: 'A variety of mental health videos',
+		icon: iconStyle(MdOndemandVideo),
 		imgClass: 'one',
+		featureLink: '/videos'
 	},
 	{
-		name: 'Ease of Use',
-		description: 'Our system is easy to use and integrate',
-		icon: iconStyle(IoIosOptions),
+		name: 'Audiobooks',
+		description: 'Audiobooks & guides you can listen to anytime',
+		icon: iconStyle(FaRegFileAudio),
 		imgClass: 'two',
+		featureLink: '/audiobooks'
 	},
 	{
-		name: 'Maintenance',
-		description: 'Our code is written in highest standards, which makes it highly sustainable',
-		icon: iconStyle(GrHostMaintenance),
+		name: 'Podcasts',
+		description: 'Podcasts specifically for mental health discussions',
+		icon: iconStyle(FaPodcast),
 		imgClass: 'three',
+		featureLink: '/podcasts'
 	},
 	{
-		name: '24/7 Support',
-		description: 'Our team is available at all times in case you need us',
-		icon: iconStyle(BiSupport),
+		name: 'Support Groups',
+		description: 'Find local support groups near you',
+		icon: iconStyle(MdGroups),
 		imgClass: 'four',
+		featureLink: '/support'
 	},
 	{
-		name: 'Price',
-		description: 'We offer the highest value/cost ratio',
-		icon: iconStyle(BiDollar),
+		name: 'Exercise',
+		description: 'Keep fit with these regurarly updated exercises',
+		icon: iconStyle(MdFitnessCenter),
 		imgClass: 'five',
+		featureLink: '/exercise'
 	},
 	{
-		name: 'Scalable',
-		description:
-			'Our servers are located all over the world, therefore improving scalability and speed ',
-		icon: iconStyle(AiOutlineCloudUpload),
+		name: 'Journal',
+		description: 'Keep tabs on what you are doing & what you want to achieve!',
+		icon: iconStyle(BsJournalText),
 		imgClass: 'six',
+		featureLink: '/journal'
+	},
+	{
+		name: 'Self Help',
+		description: 'Self help guides that you can use anytime',
+		icon: iconStyle(FaHandsHelping),
+		imgClass: 'seven',
+		featureLink: '/selfhelp'
+	},
+	{
+		name: 'Community',
+		description: 'Get involved with events, chat with & meet people in your own community',
+		icon: iconStyle(RiCommunityLine),
+		imgClass: 'eight',
+		featureLink: '/journal'
 	},
 ];

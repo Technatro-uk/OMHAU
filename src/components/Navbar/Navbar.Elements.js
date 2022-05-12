@@ -77,7 +77,7 @@ text-align: center;
 `;
 
 export const NavItem = styled.li`
-height: 80px;
+height: 60px;
 border-bottom: 2px solid transparent;
 
 &:hover {

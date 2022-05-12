@@ -61,23 +61,28 @@ const Navbar = () => {
                 <NavLinks to='/resources'>
                   Resources
                 </NavLinks>
-              </NavItem>
-            
+              </NavItem>            
             
               <NavItem>
-                <NavLinks to='/products'>
-                  Products
+                <NavLinks to='/support'>
+                  Support
+                </NavLinks>
+              </NavItem>
+              
+              <NavItem>
+                <NavLinks to='/community'>
+                  Community
                 </NavLinks>
               </NavItem>
 
               <NavItemBtn>
                 {button ? (
-                  <NavBtnLink to='/sign-up'>
-                    <Button primary>SIGNUP</Button>
+                  <NavBtnLink to='//www.facebook.com/groups/ourmentalhealthandus/' target='_blank'>
+                    <Button primary>Facebook</Button>
                   </NavBtnLink>
                 ) : (
-                  <NavBtnLink to='sign-up'>
-                    <Button fontBig primary>SIGNUP</Button>
+                  <NavBtnLink to='//www.facebook.com/groups/ourmentalhealthandus/' target='_blank'>
+                    <Button fontBig primary>Facebook</Button>
                   </NavBtnLink>
                 )}
               </NavItemBtn>

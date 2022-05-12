@@ -12,28 +12,15 @@ import {
 import { featuresData } from './Data';
 
 const Features = () => {
-	const initial = {
-		y: 40,
-		opacity: 0,
-	};
-	const animate = {
-		y: 0,
-		opacity: 1,
-	};
 
 	return (
 		<FeaturesContainer>
 				<FeatureTextWrapper>
-					<FeatureTitle>Resource Library</FeatureTitle>
+					<FeatureTitle>Resources</FeatureTitle>
 				</FeatureTextWrapper>
 				<FeatureWrapper>
-					{featuresData.map((el, index) => (
-						<FeatureColumn
-							initial={initial}
-							animate={animate}
-							transition={{ duration: 0.3 + index * 0.1 }}
-							key={index}
-						>
+					{featuresData.map((el) => (
+						<FeatureColumn to={el.featureLink}>
 							<FeatureImageWrapper className={el.imgClass}>
 								{el.icon}
 							</FeatureImageWrapper>

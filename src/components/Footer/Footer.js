@@ -24,29 +24,24 @@ const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinksItems>
               <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to='sign-up'>About</FooterLink>
-              <FooterLink to='/'>Mental Health</FooterLink>
-              <FooterLink to='/'>Privacy Policy</FooterLink>
-              <FooterLink to='/'>Terms of Service</FooterLink>
-            </FooterLinksItems>
-            <FooterLinksItems>
-              <FooterLinkTitle>Contact Us</FooterLinkTitle>
-              <FooterLink to='sign-up'>Messenger</FooterLink>
-              <FooterLink to='/'>Email</FooterLink>
+              <FooterLink to='/about' target='_blank'>About</FooterLink>
+              <FooterLink to='//www.nhs.uk/mental-health/' target='_blank'>Mental Health</FooterLink>
+              <FooterLink to='/privacy' target='_blank'>Privacy Policy</FooterLink>
+              <FooterLink to='/tos' target='_blank'>Terms of Service</FooterLink>
             </FooterLinksItems>
             </FooterLinksWrapper>    
             <FooterLinksWrapper>    
             <FooterLinksItems>
               <FooterLinkTitle>Resources</FooterLinkTitle>
-              <FooterLink to='sign-up'>Videos</FooterLink>
-              <FooterLink to='/'>Audio</FooterLink>
-              <FooterLink to='/'>Podcasts</FooterLink>
-              <FooterLink to='/'>Workbooks</FooterLink>
+              <FooterLink to='/videos' target='_blank'>Videos</FooterLink>
+              <FooterLink to='/audiobooks' target='_blank'>Audiobooks</FooterLink>
+              <FooterLink to='/podcasts' target='_blank'>Podcasts</FooterLink>
+              <FooterLink to='/selfhelp' target='_blank'>Self Help Guides</FooterLink>
             </FooterLinksItems>
             <FooterLinksItems>
               <FooterLinkTitle>Social Media</FooterLinkTitle>
-              <FooterLink to='/'>Facebook</FooterLink>
-              <FooterLink to='/'>YouTube</FooterLink>
+              <FooterLink to='//www.facebook.com/groups/ourmentalhealthandus/' target='_blank'>Facebook</FooterLink>
+              <FooterLink to='/' target='_blank'>YouTube</FooterLink>
             </FooterLinksItems>
             </FooterLinksWrapper>
         </FooterLinksContainer>
@@ -58,11 +53,11 @@ const Footer = () => {
             </SocialLogo>
             <WebsiteRights>&copy; OMHAU 2020-2022</WebsiteRights>
             <SocialIcons>
-              <SocialIconLink href='https://facebook.com' target='_blank' aria-label='Facebook'><FaFacebook /></SocialIconLink>
               {/* <SocialIconLink href='/' target='_blank' aria-label='Instagram'><FaInstagram /></SocialIconLink> */}
               {/* <SocialIconLink href='/' target='_blank' aria-label='Twitter'><FaTwitter /></SocialIconLink> */}
-              <SocialIconLink href='https://youtube.com' target='_blank' aria-label='YouTube' rel='noopener noreferrer'><FaYoutube /></SocialIconLink>
               {/* <SocialIconLink href='/' target='_blank' aria-label='LinkedIn'><FaLinkedin /></SocialIconLink> */}
+              <SocialIconLink href='https://www.facebook.com/groups/ourmentalhealthandus/' target='_blank' aria-label='Facebook'><FaFacebook /></SocialIconLink>
+              <SocialIconLink href='https://youtube.com' target='_blank' aria-label='YouTube' rel='noopener noreferrer'><FaYoutube /></SocialIconLink>
             </SocialIcons>
           </SocialMediaWrap>
         </SocialMedia>

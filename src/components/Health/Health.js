@@ -31,7 +31,7 @@ const Health = () => {
                 <HealthIcon src={Icon2} />
                 <HealthH2>Activities & Exercise</HealthH2>
                 <HealthP>We help to reduce your fees and increase your overall revenue</HealthP>
-                <HealthLink to='/'>
+                <HealthLink to='/exercise'>
                     <Button>Go to <i class="fa-solid fa-arrow-right"></i></Button>
                 </HealthLink>
             </HealthCard>

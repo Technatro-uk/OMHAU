@@ -4,6 +4,7 @@ import InfoSection from '../../components/InfoSection/InfoSection';
 import { Resource1, Resource3 } from './Data';
 
 const Resources = () => {
+  
   return (
     <>
         <Features />

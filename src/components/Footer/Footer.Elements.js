@@ -132,6 +132,7 @@ export const SocialIcon = styled.img`
 export const WebsiteRights = styled.small`
     color: dodgerblue;
     margin-bottom: 16px;
+    text-decoration: none;
 `;
 
 export const SocialIcons = styled.div`
