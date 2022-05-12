@@ -1,4 +1,4 @@
-![Our Mental Health & Us](https://github.com/Technatro-uk/OMHAU/blob/dev/public/logo512.png?raw=true "OMHAU")
+![Our Mental Health & Us](https://github.com/Technatro-uk/OMHAU/blob/dev/public/logo192.png?raw=true "OMHAU")
 
 # Our Mental Health & Us (Development Project)
 
