@@ -2,36 +2,33 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const FeaturesContainer = styled.div`
-    height: 600px;
-    background: #F3DAFF;
+    height: 100%;
+	// background: #F3DAFF;
 	
 	@media screen and (max-width: 568px) {
-		height: 800px;
+		height: 100vh;
 	}
 `;
 
 export const FeatureTitle = styled.h2`
-    padding-top: 20px;
 	text-align: center;
-	font-size: clamp(1.3rem, 13vw, 3.1rem);
+	font-size: clamp(1rem, 13vw, 3.1rem);
 	line-height: 1.06;
-	letter-spacing: 0.4rem;
+	letter-spacing: 0.2rem;
 	margin: auto;
 	color: dodgerblue;
 `;
 
 export const FeatureTextWrapper = styled.div`
 	position: relative;
-	padding: 0 0 20px;
-	margin-bottom: 0.4rem;
+	padding-top: 20px;
 `;
 
 export const FeatureWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	margin-top: 1rem;
 	grid-gap: 1rem;
-    padding: 30px;
+    padding: 20px;
 
 
 	@media screen and (max-width: 1100px) {
@@ -73,6 +70,7 @@ export const FeatureImageWrapper = styled.div`
         transition: all 0.3s ease-out;
     }
 `;
+
 export const FeatureName = styled.h3`
 	font-weight: 600;
 	font-size: 1.3rem;
@@ -87,7 +85,7 @@ export const FeatureName = styled.h3`
 `;
 
 export const FeatureText = styled.p`
-	margin: 1rem 0 auto;
+	margin: 0.5rem 0 auto;
 	text-align: center;
 	font-size: 0.9rem;
 	line-height: 1.73;

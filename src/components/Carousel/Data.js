@@ -2,30 +2,29 @@
 
 export const data = [
 	{
-		title: 'Our top clients',
-		description: 'We have provided services to top clients in tech industry',
-		image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80',
+		title: 'Contact a Samaritan',
+		description: "If you need someone to talk to, we listen. We won't judge or tell you what to do.",
+		image: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/0019/0882/brand.gif?itok=ukrEh8mC',
+		linkUrl: 'https://www.samaritans.org/scotland/how-we-can-help/contact-samaritan/'
 	},
 	{
-		title: 'Our top clients',
-		description: 'We have provided services to top clients in tech industry',
-		image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80',
+		title: 'Shout is an affiliate of Crisis Text Line',
+		description: 'Want to text with a trained Crisis Volunteer?',
+		image: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Crisis_Text_Line_logo.png',
+		linkUrl: 'sms:85258?&body=SHOUT'
 	},
 	{
-		title: 'Our top clients',
-		description: 'We have provided services to top clients in tech industry',
-		image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80',
+		title: 'Support in Mind Scotland',
+		description: 'S-I-M-S seek to support and empower all those affected by mental illness',
+		image: 'https://www.pkavs.org.uk/wp-content/uploads/2020/08/5ce655aec7ac862044977a1d.jpeg',
+		linkUrl: 'https://www.supportinmindscotland.org.uk/ourservices'
 	},
 	{
-		title: 'Our servers',
-		description: 'Find more about hardware and software used for your service',
-		image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?cs=srgb&dl=pexels-manuel-geissinger-325229.jpg&fm=jpg',
-	},
-	{
-		title: 'Our top clients',
-		description: 'We have provided services to top clients in tech industry',
-		image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80',
-	},
+		title: 'Scotland BSL (British Sign Language)',
+		description: 'A BSL interpreter will appear on your screen to interpret your conversation',
+		image: 'https://www.cas.org.uk/files/styles/call_to_action/public/cta/cs-logo-resized.jpg?itok=pogPFH3H',
+		linkUrl: 'https://contactscotland-bsl.org/download/'
+	}
 ];
 
 export const sliderSettings = {

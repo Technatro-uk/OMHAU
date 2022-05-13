@@ -36,7 +36,7 @@ const InfoSection = ({
                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                   <Heading lightText={lightText}>{headline}</Heading>
                     <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                      <Link to='/healthandwellbeing'>
+                      <Link to='/resources'>
                         <Button big fontBig primary={primary}>
                           {buttonLabel}
                         </Button>

@@ -36,13 +36,14 @@ export const ImageWrapper = styled.div`
 	align-items: center;
 	border-radius: 5px;
 	outline: none;
-	height: 180px;
+	height: 200px;
 	background: #FFF;
+	text-align: center;
 `;
 
 export const ButtonContainer = styled(Row)`
 	& svg {
-		margin: 0 0.5rem;
+		margin: 0.5rem;
 		cursor: pointer;
 	}
 
@@ -81,14 +82,15 @@ export const ReviewSlider = styled(Slider)`
 
 export const CardButton = styled.button`
 	background-color: dodgerblue;
-	font-size: 1.3rem;
-	padding: 5px 5px;
+	font-size: 1.5rem;
+	padding: 5px;
 	color: #fff;
 	cursor: pointer;
 	width: 100%;
-	margin: auto 0 0 0;
-	border: none;
-	border-radius: 0 0 10px 10px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
 
 	&:hover {
 		background-color: #D364E7;
@@ -97,6 +99,6 @@ export const CardButton = styled.button`
 		
 	@media screen and (max-width: 768px) {
 		font-size: 0.8rem;
-		padding: 5px 5px;
+		padding: 5px;
 	}
 `;

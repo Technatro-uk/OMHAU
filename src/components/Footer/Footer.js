@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaYoutube } from 'react-icons/fa';
+// import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import logo from '../../images/OMHAU_LOGO.png';
 import { 
   FooterContainer,
