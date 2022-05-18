@@ -34,32 +34,32 @@ export const featuresData = [
 		imgClass: 'four',
 		featureLink: '/support'
 	},
-	{
-		name: 'Exercise',
-		description: 'Keep fit with these regurarly updated exercises',
-		icon: iconStyle(MdFitnessCenter),
-		imgClass: 'five',
-		featureLink: '/exercise'
-	},
-	{
-		name: 'Journal',
-		description: 'Keep tabs on what you are doing & what you want to achieve!',
-		icon: iconStyle(BsJournalText),
-		imgClass: 'six',
-		featureLink: '/journal'
-	},
-	{
-		name: 'Self Help',
-		description: 'Self help guides that you can use anytime',
-		icon: iconStyle(FaHandsHelping),
-		imgClass: 'seven',
-		featureLink: '/selfhelp'
-	},
-	{
-		name: 'Community',
-		description: 'Get involved with events, chat with & meet people in your own community',
-		icon: iconStyle(RiCommunityLine),
-		imgClass: 'eight',
-		featureLink: '/journal'
-	},
+	// {
+	// 	name: 'Exercise',
+	// 	description: 'Keep fit with these regurarly updated exercises',
+	// 	icon: iconStyle(MdFitnessCenter),
+	// 	imgClass: 'five',
+	// 	featureLink: '/exercise'
+	// },
+	// {
+	// 	name: 'Journal',
+	// 	description: 'Keep tabs on what you are doing & what you want to achieve!',
+	// 	icon: iconStyle(BsJournalText),
+	// 	imgClass: 'six',
+	// 	featureLink: '/journal'
+	// },
+	// {
+	// 	name: 'Self Help',
+	// 	description: 'Self help guides that you can use anytime',
+	// 	icon: iconStyle(FaHandsHelping),
+	// 	imgClass: 'seven',
+	// 	featureLink: '/selfhelp'
+	// },
+	// {
+	// 	name: 'Community',
+	// 	description: 'Get involved with events, chat with & meet people in your own community',
+	// 	icon: iconStyle(RiCommunityLine),
+	// 	imgClass: 'eight',
+	// 	featureLink: '/journal'
+	// },
 ];

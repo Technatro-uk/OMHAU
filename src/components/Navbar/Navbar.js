@@ -50,28 +50,10 @@ const Navbar = () => {
               {click ? <FaTimes /> : <FaBars />}
             </MobileIcon>
             <NavMenu onClick={handleClick} click={click}>
-
-              <NavItem>
-                <NavLinks to='/'>
-                  Home
-                </NavLinks>
-              </NavItem>
             
               <NavItem>
                 <NavLinks to='/resources'>
                   Resources
-                </NavLinks>
-              </NavItem>            
-            
-              <NavItem>
-                <NavLinks to='/support'>
-                  Support
-                </NavLinks>
-              </NavItem>
-              
-              <NavItem>
-                <NavLinks to='/community'>
-                  Community
                 </NavLinks>
               </NavItem>
 

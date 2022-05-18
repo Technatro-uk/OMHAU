@@ -8,14 +8,12 @@ import {
   TextWrapper, 
   Heading, 
   Subtitle, 
-  MediaWrapper, 
-  MediaHeading3 } from './MediaSection.Elements';
+  MediaWrapper } from './MediaSection.Elements';
 
 const MediaSection = ({ 
   lightBg, 
   imgStart,
   lightTextDesc, 
-  label, 
   description, 
   headline, 
   lightText, 
@@ -31,14 +29,11 @@ const MediaSection = ({
               <TextWrapper>
                   <Heading lightText={lightText}>{headline}</Heading>
                     <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                    <MediaHeading3>
-                          {label}
-                        </MediaHeading3>
               </TextWrapper>
             </MediaColumn>
             <MediaColumn>
               <MediaWrapper start={start}>
-                <MediaPlayer mediaUrl={url} />
+                <MediaPlayer mediaUrl={url} mediaDesc={description} mediaCred={headline} />
               </MediaWrapper>
             </MediaColumn>
           </MediaRow>

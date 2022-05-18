@@ -40,7 +40,7 @@ const Carousel = () => {
               <TextWrapper size="0.8rem" margin="5px auto" weight="bold">
                 {re.title}
               </TextWrapper>
-              <TextWrapper size="1rem" margin="0.5rem" color="#010606">
+              <TextWrapper size="0.8rem" margin="0.5rem" color="#010606">
                 {re.description}
               </TextWrapper>
               <a href={re.linkUrl} target='_blank' rel='noreferrer'>

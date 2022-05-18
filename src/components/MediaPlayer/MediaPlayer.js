@@ -6,7 +6,7 @@ import { MediaPlayerContainer } from './MediaPlayer.Elements';
 const MediaPlayer = ({ mediaUrl }) => {
   return (
     <MediaPlayerContainer>
-        <ReactPlayer url={mediaUrl} controls={true} muted={false} />
+        <ReactPlayer url={mediaUrl} controls={true} muted={true} />
     </MediaPlayerContainer>
   )
 }

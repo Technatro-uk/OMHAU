@@ -9,7 +9,7 @@ export const data = [
 	},
 	{
 		title: 'Shout is an affiliate of Crisis Text Line',
-		description: 'Want to text with a trained Crisis Volunteer?',
+		description: 'Want to text with a trained Crisis Volunteer? (This will send a text message directly from here)',
 		image: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Crisis_Text_Line_logo.png',
 		linkUrl: 'sms:85258?&body=SHOUT'
 	},

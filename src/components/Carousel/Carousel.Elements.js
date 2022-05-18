@@ -11,8 +11,9 @@ export const CarouselContainer = styled.div`
 	margin-left: auto;
 	padding-right: 50px;
 	padding-left: 50px;
+	height: 100vh;
 
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: 768px) {
 		padding-right: 30px;
 		padding-left: 30px;
 	}
@@ -36,7 +37,7 @@ export const ImageWrapper = styled.div`
 	align-items: center;
 	border-radius: 5px;
 	outline: none;
-	height: 200px;
+	height: 15rem;
 	background: #FFF;
 	text-align: center;
 `;

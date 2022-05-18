@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
 export const MediaSec = styled.div`
+    height: 100vh;
+    width: 100%;
     color: #000;
     padding: 80px 0; 
     background: ${({lightBg}) => (lightBg ? '#FFF' : '#F3DAFF')};
+
+    @media screen and (max-width: 768px){
+        height: 100%;
+    }
 `;
 
 export const MediaRow = styled.div`
@@ -51,35 +57,21 @@ export const TopLine = styled.div`
 
 export const Heading = styled.h1`
     margin-bottom: 24px;
-    font-size: 48px;
+    font-size: 32px;
     line-height: 1;
-    color: ${({lightText}) => (lightText ? 'dodgerblue' : '#1C2237')};    
+    color: ${({lightText}) => (lightText ? '#010606' : '#1C2237')};    
 `;
 
 export const Subtitle = styled.p`
     max-width: 440px;
     margin-bottom: 35px;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 42px;
     color: ${({lightTextDesc}) => (lightTextDesc ? 'blue' : '#4B59F7')};
 `;
 
 export const MediaWrapper = styled.div`
-    max-width: 555px;
+    max-width: 100%;
     display: flex;
     justify-content: ${({start}) => (start ? 'flex-start' : 'flex-end')};
-`;
-
-export const MediaPlayer = styled.div`
-    padding-right: 0;
-    border: 0;
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
-    max-height: 500px;
-`;
-
-export const MediaHeading3 = styled.h3`
-    font-size: 26px;
-    font-weight: 600;
 `;

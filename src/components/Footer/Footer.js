@@ -15,7 +15,8 @@ import {
   WebsiteRights,
   SocialIcons,
   SocialIconLink,
-  SocialIcon } from './Footer.Elements';
+  SocialIcon, 
+  DevelopedBy} from './Footer.Elements';
 
 const Footer = () => {
   return (
@@ -53,6 +54,7 @@ const Footer = () => {
               Our Mental Health & Us
             </SocialLogo>
             <WebsiteRights>&copy; OMHAU 2020-2022</WebsiteRights>
+            <DevelopedBy href='https://www.technatro.uk' target='_blank' aria-label='Developed by Technatro'>Developed by Technatro</DevelopedBy>
             <SocialIcons>
               {/* <SocialIconLink href='/' target='_blank' aria-label='Instagram'><FaInstagram /></SocialIconLink> */}
               {/* <SocialIconLink href='/' target='_blank' aria-label='Twitter'><FaTwitter /></SocialIconLink> */}
