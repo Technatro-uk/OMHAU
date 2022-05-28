@@ -4,18 +4,15 @@ import Slider from 'react-slick';
 
 export const CarouselContainer = styled.div`
 	width: 100%;
-	background: #F3DAFF;
-    padding: 40px 0; 
+	background: #FFF;
 	max-width: 1300px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 50px;
-	padding-left: 50px;
+	padding: 20px;
 	height: 100vh;
 
 	@media screen and (max-width: 768px) {
-		padding-right: 30px;
-		padding-left: 30px;
+		padding: 30px;
 	}
 
 `;
@@ -23,35 +20,35 @@ export const CarouselContainer = styled.div`
 export const CarouselImage = styled.img`
 	width: 100%;
 	height: 100px;
-	border-radius: 5px 5px 0 0;
+	border-radius: 8px 8px 3px 3px;
 	object-fit: cover;
-	vertical-align: middle;
-	
+	vertical-align: middle;	
 `;
 
 export const ImageWrapper = styled.div`
-	width: 90%;
+	width: 100%;
 	display: flex !important;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	border-radius: 5px;
+	border: 1px solid dodgerblue;
 	outline: none;
-	height: 15rem;
+	height: 14rem;
 	background: #FFF;
 	text-align: center;
 `;
 
 export const ButtonContainer = styled(Row)`
 	& svg {
-		margin: 0.5rem;
+		margin: 1rem;
 		cursor: pointer;
 	}
 
 	& svg:hover {
 		opacity: 1;
 		transition: opacity 0.3s ease-in-out;
-        background: #C5C8EC;
+        background: lightskyblue;
 		border-radius: 50%;
 	}
 
@@ -84,7 +81,7 @@ export const ReviewSlider = styled(Slider)`
 export const CardButton = styled.button`
 	background-color: dodgerblue;
 	font-size: 1.5rem;
-	padding: 5px;
+	padding: 10px;
 	color: #fff;
 	cursor: pointer;
 	width: 100%;
@@ -99,7 +96,7 @@ export const CardButton = styled.button`
 	}
 		
 	@media screen and (max-width: 768px) {
-		font-size: 0.8rem;
-		padding: 5px;
+		font-size: 1rem;
+		padding: 10px;
 	}
 `;

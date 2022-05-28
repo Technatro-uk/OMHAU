@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: 'Raleway', sans-serif;
+		background: #fff;
     }
 `;
 
@@ -27,7 +28,7 @@ export const Container = styled.div`
 export const Section = styled.section`
 	padding: ${({ padding }) => (padding ? padding : '40px 0')};
 	margin: ${({ margin }) => (margin ? margin : '')};
-	background: ${({ inverse }) => (inverse ? '#F3DAFF' : '#071c2f')};
+	background: ${({ inverse }) => (inverse ? '#FFF' : '#071c2f')};
 	position: ${({ position }) => (position ? position : '')};
 	width: ${({ width }) => (width ? width : 'auto')};
 	min-width: ${({ minWidth }) => (minWidth ? minWidth : 'auto')};
@@ -63,8 +64,8 @@ export const Row = styled.div`
 `;
 
 export const Button = styled.button`
-    border-radius: 5px;
-    background: ${({primary}) => (primary ? '#D364E7' : '#4B59F7')};
+    border-radius: 30px;
+    background: ${({primary}) => (primary ? 'dodgerblue' : '#4B59F7')};
     white-space: nowrap;
     padding: ${({big}) => (big ? '12px 64px' : '10px 20px')};
     color: #FFF;
@@ -91,7 +92,7 @@ export const Heading = styled.h2`
 	margin-bottom: ${({ mb }) => (mb ? mb : '0')};
 	margin-top: ${({ mt }) => (mt ? mt : '0')};
 	color: ${({ inverse }) => (inverse ? 'dodgerblue' : '#fff')};
-	letter-spacing: 0.25rem;
+	letter-spacing: 0.35rem;
 	line-height: 0.86;
 	text-align: center;
 	width: ${({ width }) => (width ? width : '100%')};

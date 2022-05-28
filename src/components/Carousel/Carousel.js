@@ -19,9 +19,9 @@ const Carousel = () => {
 	return (
     <CarouselContainer>
       <Section margin="auto" maxWidth="1200px" padding="50px 50px" inverse>
-        <Row justify="space-between" margin="1rem" wrap="wrap">
+        <Row justify="space-between" margin="1.5rem" wrap="nowrap">
           <Heading width="auto" inverse>
-            Free Online Resources
+          Need to chat with someone?
           </Heading>
           <ButtonContainer>
             <IconContext.Provider

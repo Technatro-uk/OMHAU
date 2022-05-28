@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from '../../globalStyles';
-import MediaPlayer from '../MediaPlayer/MediaPlayer';
 import { 
   MediaSec, 
   MediaRow, 
@@ -33,7 +32,7 @@ const MediaSection = ({
             </MediaColumn>
             <MediaColumn>
               <MediaWrapper start={start}>
-                <MediaPlayer mediaUrl={url} mediaDesc={description} mediaCred={headline} />
+                
               </MediaWrapper>
             </MediaColumn>
           </MediaRow>

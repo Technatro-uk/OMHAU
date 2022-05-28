@@ -7,7 +7,7 @@ export const HealthContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F3DAFF;
+    background: #FFF;
 
     @media screen and (max-width: 768px){
         height: 1400px;
@@ -78,14 +78,14 @@ export const HealthH2 = styled.h2`
 `;
 
 export const HealthP = styled.p`
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
 `;
 
 export const HealthLink = styled(Link)`
     color: #FFF;
-    background: #F4E6F7;
-    font-size: 16px;
-    margin-top: 14px;
+    background: transparent;
+    font-size: 14px;
+    margin-top: 10px;
     vertical-align: middle;
 `;

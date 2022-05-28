@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const FeaturesContainer = styled.div`
     height: 100%;
-	// background: #F3DAFF;
 	
 	@media screen and (max-width: 568px) {
 		height: 100vh;
@@ -26,8 +25,8 @@ export const FeatureTextWrapper = styled.div`
 
 export const FeatureWrapper = styled.div`
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 0.5rem;
     padding: 20px;
 
 
@@ -37,7 +36,7 @@ export const FeatureWrapper = styled.div`
 	}
 
 	@media screen and (max-width: 568px) {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
         padding: 30px;
 	}
 `;
@@ -47,27 +46,26 @@ export const FeatureColumn = styled(Link)`
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
-	background: #FDFDFD;
+	background: #FFF;
 	text-decoration: none;
-	padding: 10px;
-	box-shadow: 0 0 32px 8px #d0d0d0;
+	padding: 1rem;
+	box-shadow: 0 0 24px 8px #d0d0d0;
 	border-radius: 10px;
 
     &:hover {
-        background: dodgerblue;
-		color: white;
+		border: 2px solid dodgerblue;
     }
 `;
 
 export const FeatureImageWrapper = styled.div`
-	margin: 1rem 0;
+	margin: 1rem;
 	border-radius: 50%;
-	border: 2px solid #000;
-	padding: 15px;    
+	border: 2px solid dodgerblue;
+	padding: 1.3rem;    
     
     &:hover {
-        transform: scale(1.20);
-        transition: all 0.3s ease-out;
+        // transform: scale(1.20);
+        // transition: all 0.3s ease-out;
     }
 `;
 
@@ -75,7 +73,8 @@ export const FeatureName = styled.h3`
 	font-weight: 600;
 	font-size: 1.3rem;
 	letter-spacing: 2px;
-	color: darkorchid;
+	color: dodgerblue;	
+	background: transparent;
 
 	@media screen and (max-width: 768px) {
 		font-weight: 400;
@@ -91,6 +90,7 @@ export const FeatureText = styled.p`
 	line-height: 1.73;
 	letter-spacing: 0.5px;
 	color: #000;
+	background: transparent;
 
 	@media screen and (max-width: 768px) {
 		display: none;

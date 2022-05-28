@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InfoSec = styled.div`
     color: #000;
     padding: 80px 0; 
-    background: ${({lightBg}) => (lightBg ? '#FFF' : '#F3DAFF')};
+    background: #FFF;
 `;
 
 export const InfoRow = styled.div`
@@ -44,7 +44,7 @@ export const TopLine = styled.div`
     color: ${({lightTopLine}) => (lightTopLine ? 'blue' : '#4B59F7')};
     font-size: 18px;
     line-height: 16px;
-    // font-weight: 700;
+    font-weight: 700;
     letter-spacing: 1.4px;
     margin-bottom: 16px;
 `;

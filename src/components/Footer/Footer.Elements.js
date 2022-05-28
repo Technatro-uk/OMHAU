@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.div`
-    background-color: #F3DAFF;
-    padding: 4rem 0 2rem 0;
+    background-color: #FFF;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,7 +124,7 @@ export const SocialLogo = styled(Link)`
 `;
 
 export const DevelopedBy = styled.a`
-    color: darkorchid;
+    color: dodgerblue;
     justify-self: start;
     cursor: pointer;
     text-decoration: none;

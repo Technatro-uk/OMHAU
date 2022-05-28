@@ -51,7 +51,7 @@ display: none;
     top: 0;
     right: 0;
     transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 `;
@@ -81,7 +81,7 @@ height: 60px;
 border-bottom: 2px solid transparent;
 
 &:hover {
-    border-bottom: 2px solid #4b59f7;
+    border-bottom: 3px solid dodgerblue;
 }
 
 @media screen and (max-width: 960px){
@@ -95,7 +95,7 @@ border-bottom: 2px solid transparent;
 
 
 export const NavLinks = styled(Link)`
-color: #D364E7;
+color: dodgerblue;
 display: flex;
 align-items: center;
 text-decoration: none;

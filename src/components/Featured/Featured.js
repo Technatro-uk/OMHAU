@@ -20,10 +20,10 @@ import {
 
 const Featured = () => {
   return (
-    <IconContext.Provider value={{ color: '#A9B3C1', size: 64 }}>
+    <IconContext.Provider value={{ color: 'dodgerblue', size: 36 }}>
       <FeaturedSection>
         <FeaturedWrapper>
-          <FeaturedHeading>Our Services</FeaturedHeading>
+          <FeaturedHeading>Featured</FeaturedHeading>
           <FeaturedContainer>
             <FeaturedCard to='/sign-up'>
               <FeaturedCardInfo>

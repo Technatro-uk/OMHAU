@@ -3,37 +3,37 @@ import { BsJournalText } from 'react-icons/bs';
 import { MdOndemandVideo, MdGroups, MdFitnessCenter } from 'react-icons/md';
 import { FaRegFileAudio,FaPodcast, FaHandsHelping } from 'react-icons/fa';
 import { RiCommunityLine } from 'react-icons/ri';
-const iconStyle = (Icon) => <Icon size="1.5rem" color="#0f0f0f" />;
+const iconStyle = (Icon) => <Icon size="1.7rem" color="dodgerblue" />;
 
 export const featuresData = [
 	{
-		name: 'Videos',
-		description: 'A variety of mental health videos',
+		name: 'Video',
+		description: 'Health & Fitness videos',
 		icon: iconStyle(MdOndemandVideo),
 		imgClass: 'one',
-		featureLink: '/videos'
+		featureLink: '/video'
 	},
 	{
-		name: 'Audiobooks',
-		description: 'Audiobooks & guides you can listen to anytime',
+		name: 'Audio',
+		description: 'Audiobooks you can listen to anytime',
 		icon: iconStyle(FaRegFileAudio),
 		imgClass: 'two',
-		featureLink: '/audiobooks'
+		featureLink: '/audio'
 	},
 	{
 		name: 'Podcasts',
-		description: 'Podcasts specifically for mental health discussions',
+		description: 'Podcasts with a focus on mental health',
 		icon: iconStyle(FaPodcast),
 		imgClass: 'three',
 		featureLink: '/podcasts'
 	},
-	{
-		name: 'Support Groups',
-		description: 'Find local support groups near you',
-		icon: iconStyle(MdGroups),
-		imgClass: 'four',
-		featureLink: '/support'
-	},
+	// {
+	// 	name: 'Support Groups',
+	// 	description: 'Find local support groups near you',
+	// 	icon: iconStyle(MdGroups),
+	// 	imgClass: 'four',
+	// 	featureLink: '/support'
+	// },
 	// {
 	// 	name: 'Exercise',
 	// 	description: 'Keep fit with these regurarly updated exercises',

@@ -9,4 +9,7 @@ Website: <a href="https://facebook.com/groups/ourmentalhealthandus">Our Mental H
 - [ ] Update page contents to reflect 'Mental Health content'
 - [x] Rename pages on Navbar
 - [x] Add video playlist to 'Resources' page
-- [ ] Add pages/content for: Audiobooks, Podcasts, Support Groups, Journal, Self Help, Community
+- [x] Add pages for: Video, Audiobooks, Podcasts
+- [ ] Add content for: Video, Audiobooks, Podcasts
+- [ ] Add pages/content for: Support Groups, Journal, Self Help, Community
+- [ ] Add content for: Support Groups, Journal, Self Help, Community
