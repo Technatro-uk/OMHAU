@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const FeaturedSection = styled.div`
+export const QuickEscapesSection = styled.div`
+  height: 100vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  align-items: center;
 `;
 
-export const FeaturedWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const QuickEscapesWrapper = styled.div`
+  display: grid;
+  grid-template-column: repeat(2, 1fr);
   align-items: center;
   margin: 10px auto;
 
@@ -23,13 +24,13 @@ export const FeaturedWrapper = styled.div`
   }
 `;
 
-export const FeaturedHeading = styled.h1`
+export const QuickEscapesHeading = styled.h1`
   color: #777;
   font-size: 28px;
   margin-bottom: 14px;
 `;
 
-export const FeaturedContainer = styled.div`
+export const QuickEscapesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,11 +42,11 @@ export const FeaturedContainer = styled.div`
   }
 `;
 
-export const FeaturedCard = styled(Link)`
-  background: #242424;
+export const QuickEscapesCard = styled(Link)`
+  background: #fff;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
   width: 180px;
-  height: 150px;
+  height: 100%;
   text-decoration: none;
   border-radius: 4px;
 
@@ -68,35 +69,36 @@ export const FeaturedCard = styled(Link)`
   }
 `;
 
-export const FeaturedCardInfo = styled.div`
+export const QuickEscapesCardInfo = styled.div`
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 350px;
   padding: 24px;
+  justify-content: center;
   align-items: center;
   color: #fff;
 `;
 
-export const FeaturedCardIcon = styled.div`
+export const QuickEscapesCardIcon = styled.div`
   margin: 16px 0;
 `;
 
-export const FeaturedCardPlan = styled.h3`
+export const QuickEscapesCardPlan = styled.h3`
   margin-bottom: 5px;
   font-size: 16px;
 `;
 
-export const FeaturedCardCost = styled.h4`
+export const QuickEscapesCardCost = styled.h4`
   font-size: 20px;
   color: #333;
 `;
 
-export const FeaturedCardLength = styled.p`
+export const QuickEscapesCardLength = styled.p`
   font-size: 14px;
   margin-bottom: 14px;
 `;
 
-export const FeaturedCardFeatures = styled.ul`
+export const QuickEscapesCardFeatures = styled.ul`
   margin: 16px 0 12px;
   list-style: none;
   display: flex;
@@ -105,6 +107,6 @@ export const FeaturedCardFeatures = styled.ul`
   color: #a9b3c1;
 `;
 
-export const FeaturedCardFeature = styled.li`
+export const QuickEscapesCardFeature = styled.li`
   margin-bottom: 10px;
 `;

@@ -3,27 +3,23 @@ import { BsListStars } from 'react-icons/bs';
 import { MdOndemandVideo } from 'react-icons/md';
 import { RiMentalHealthFill } from 'react-icons/ri';
 import { GiHealthNormal } from 'react-icons/gi';
-const iconStyle = (Icon) => <Icon size="1.5rem" color='#333' />;
+const iconStyle = (Icon) => <Icon size="1.5rem" />;
 
-export const SidebarData = [  
+export const MenuSortData = [  
   {
     menuIcon: iconStyle(MdOndemandVideo),
-    menuTitle: 'Library Home',
-    menuLink: ''
+    menuTitle: 'Home'
   },
   {
     menuIcon: iconStyle(BsListStars),
-    menuTitle: 'Featured',
-    menuLink: ''
+    menuTitle: 'Featured'
   },
   {
     menuIcon: iconStyle(GiHealthNormal),
-    menuTitle: "Health & Wellbeing",
-    menuLink: ''
+    menuTitle: "Health & Wellbeing"
   },
   {
     menuIcon: iconStyle(RiMentalHealthFill),
-    menuTitle: 'Mental Health',
-    menuLink: ''
+    menuTitle: 'Mental Health'
   }
 ];

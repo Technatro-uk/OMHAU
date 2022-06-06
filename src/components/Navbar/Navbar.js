@@ -52,8 +52,25 @@ const Navbar = () => {
             <NavMenu onClick={handleClick} click={click}>
             
               <NavItem>
-                <NavLinks to='/resources'>
-                  Resources
+              </NavItem>
+              <NavItem>
+                <NavLinks to='/video'>
+                  Video
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks to='/audio'>
+                  Audio
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks to='/podcasts'>
+                  Podcasts
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks to='/quickescapes'>
+                  Quick Escapes
                 </NavLinks>
               </NavItem>
 

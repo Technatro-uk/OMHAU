@@ -68,7 +68,7 @@ text-align: center;
     width: 100%;
     height: 90vh;
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: ${({click}) => (click ? 0 : '-100%')};
     opacity: 1;
     transition: all 0.5s ease;
@@ -121,7 +121,7 @@ export const NavItemBtn = styled.li`
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 120px;
+        height: 80px;
     }
 `;
 

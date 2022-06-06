@@ -1,9 +1,10 @@
 import React from 'react';
+import { Information1, Information3 } from './Data';
 import InfoSection from '../../components/InfoSection/InfoSection';
-import { Information1, Information2, Information3 } from './Data';
 import Health from '../../components/Health/Health';
-import Footer from '../../components/Footer/Footer';
 import Carousel from '../../components/Carousel/Carousel';
+import QuickEscapes from '../../components/QuickEscapes/QuickEscapes';
+import Footer from '../../components/Footer/Footer';
 
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
     <>
         <InfoSection {...Information1} />
         <Health />
-        <InfoSection {...Information2} />
+        <QuickEscapes />
         <Carousel />
         <InfoSection {...Information3} />
         <Footer />

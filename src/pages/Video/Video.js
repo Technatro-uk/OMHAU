@@ -1,14 +1,10 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar/Sidebar';
-import Featured from '../../components/Featured/Featured';
+import { VideoGrid } from '../../components/VideoGrid/VideoGrid';
 
 const Video = () => {
-    
-    
   return (
     <>
-      <Sidebar menuTitle={'Video Library'} />
-      <Featured />
+      <VideoGrid />
     </>
   );
 }

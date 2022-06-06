@@ -3,10 +3,10 @@ import { GlobalStyle } from './globalStyles';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/HomePage/Home';
-import Resources from './pages/Resources/Resources';
 import Video from './pages/Video/Video';
 import Audio from './pages/Audio/Audio';
-import Featured from './components/Featured/Featured';
+import QuickEscapes from './components/QuickEscapes/QuickEscapes';
+import Resources from './components/Resources/Resources';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path='/resources' element={<Resources />} />
         <Route path='/video' element={<Video />} />
         <Route path='/audio' element={<Audio />} />
-        <Route path='/featured' element={<Featured />} />
+        <Route path='/quickescapes' element={<QuickEscapes />} />
       </Routes>
     </Router>
   );
