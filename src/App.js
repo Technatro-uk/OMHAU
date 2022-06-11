@@ -7,6 +7,7 @@ import Video from './pages/Video/Video';
 import Audio from './pages/Audio/Audio';
 import QuickEscapes from './components/QuickEscapes/QuickEscapes';
 import Resources from './components/Resources/Resources';
+import AddAudio from './Admin/Manage/Audio/AddAudio';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/video' element={<Video />} />
         <Route path='/audio' element={<Audio />} />
         <Route path='/quickescapes' element={<QuickEscapes />} />
+        <Route path='/addaudio' element={<AddAudio />} />
       </Routes>
     </Router>
   );
