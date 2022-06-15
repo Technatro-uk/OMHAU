@@ -13,7 +13,8 @@ import {
   ImageSection,
   InputImage,
   ImageUploadOptions,
-  ImageUploadOptionButtons
+  ImageFileUpload,
+  SubmitSection,
 } from "./AddAudio.Elements";
 
 function AddAudio() {
@@ -26,8 +27,13 @@ function AddAudio() {
     audioAuthor: "",
     audioCategory: "",
     mediaDuration: "",
-    audioImage: "",
     audioSource: "",
+  });
+
+  const [selectedFile, setSelectedFile] = useState();
+  const [preview, setPreview] = useState();
+  const [imagestring, setImageString] = useState({
+    audioImage: ""
   });
 
   function changeHandler(e) {
@@ -36,6 +42,37 @@ function AddAudio() {
     setValues(newvalues);
     // console.log(newvalues)
   }
+
+  useEffect(() => {
+    if (!selectedFile) {
+      setPreview(undefined);
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(selectedFile);
+    setPreview(objectUrl);
+
+    // free memory when ever this component is unmounted
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [selectedFile]);
+
+  const onSelectFile = (e) => {
+    if (!e.target.files || e.target.files.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+
+    // Use uploaded image..
+    const file = e.target.files[0];
+    setSelectedFile(e.target.files[0]);
+
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = (e) => {
+      setImageString(e.target.result);
+    }
+  };
 
   async function submit(e) {
     e.preventDefault();
@@ -48,23 +85,28 @@ function AddAudio() {
         audioCategory: values.audioCategory,
         mediaAdded: Date().toLocaleString(),
         mediaDuration: values.mediaDuration,
-        audioImage: values.audioImage,
+        audioImage: imagestring,
         audioSource: values.audioSource,
       }),
     };
     fetch("https://localhost:7021/api/Audio/AddAudio", requestOptions) // THIS WORKS! :)
       .then(async (response) => {
-        const data = await response.json();
+        // All code below must be modifed to account for
+        // all status codes and be error prrof before using on other pages
 
+        const data = response;
         /// check for error response
         if (!response.ok) {
           // get error message from body or default to response status
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
+        else if (response.ok) {
+          // setAudioFile(data.message); // Need to display confirmation on page when posted successfully
+          // Redirect to 'addaudio' page
+          navigate('/addaudio');
+        }
 
-        setAudioFile(data); // Need to display confirmation on page when posted successfully
-        this.props.history.push("/addaudio"); // doesnt seem to be working - needs replaced!
       })
       .catch((error) => {
         seterrorMessage(error.toString());
@@ -73,8 +115,7 @@ function AddAudio() {
   }
 
   return (
-    // Need to add Image preview to form (Image preview from URL: is possible)
-    // Need to change form to display as grid/columns to stretch across the page
+    // Need to add Image preview to form (Image preview from URL: if possible)
 
     // Once posted successfully, display confirmation (API Response) and reload page with reset form
     // OPTIONAL: Add progress animation to button to display onSubmit
@@ -87,7 +128,7 @@ function AddAudio() {
 
         <AddAudioForm onSubmit={(e) => submit(e)}>
           <FormGroup>
-          <InputLabel>Audio Title:</InputLabel>
+            <InputLabel>Audio Title:</InputLabel>
             <FormField
               placeholder="Audio Title"
               type="text"
@@ -98,7 +139,7 @@ function AddAudio() {
             />
           </FormGroup>
           <FormGroup>
-          <InputLabel>Audio Author:</InputLabel>
+            <InputLabel>Audio Author:</InputLabel>
             <FormField
               placeholder="Audio Author"
               type="text"
@@ -109,7 +150,7 @@ function AddAudio() {
             />
           </FormGroup>
           <FormGroup>
-          <InputLabel>Audio Category:</InputLabel>
+            <InputLabel>Audio Category:</InputLabel>
             <FormField
               placeholder="Audio Category"
               type="text"
@@ -120,7 +161,7 @@ function AddAudio() {
             />
           </FormGroup>
           <FormGroup>
-          <InputLabel>Audio Duration:</InputLabel>
+            <InputLabel>Audio Duration:</InputLabel>
             <FormField
               placeholder="Audio Duration"
               type="text"
@@ -132,21 +173,25 @@ function AddAudio() {
           </FormGroup>
           <ImageSection>
             <InputLabel>Audio Image</InputLabel>
-              <ImageUploadOptions>              
-                <InputImage />
-                <ImageUploadOptionButtons>Upload from Device</ImageUploadOptionButtons>
-              </ImageUploadOptions>
-              <FormField
-                placeholder="Upload from URL"
-                type="text"
-                name="AudioImage"
-                id="audioImage"
-                value={values.audioImage}
-                onChange={(e) => changeHandler(e)}
+            <ImageUploadOptions>
+              {selectedFile && <InputImage src={preview} />}
+              <ImageFileUpload
+                type="file"
+                accept="image/*"
+                onChange={onSelectFile}
               />
+            </ImageUploadOptions>
+            <FormField
+              placeholder="Upload from URL"
+              type="text"
+              name="AudioImage"
+              id="audioImage"
+              value={values.audioImage}
+              onChange={(e) => changeHandler(e)}
+            />
           </ImageSection>
           <FormGroup>
-          <InputLabel>Audio Source (URL):</InputLabel>
+            <InputLabel>Audio Source (URL):</InputLabel>
             <FormField
               placeholder="Audio Source URL"
               type="text"
@@ -156,9 +201,14 @@ function AddAudio() {
               onChange={(e) => changeHandler(e)}
             />
           </FormGroup>
-          <SubmitGroup>
-            <FormButton>SUBMIT</FormButton>
-          </SubmitGroup>
+          <SubmitSection>
+            <InputLabel>Add Audio to Database</InputLabel>
+            <SubmitGroup>
+              <FormButton type="submit">SUBMIT</FormButton>
+            </SubmitGroup>
+          </SubmitSection>
+          {audioFile}
+          {errorMessage}
         </AddAudioForm>
       </PageContainer>
     </PageSection>
