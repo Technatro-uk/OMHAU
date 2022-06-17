@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { AiFillAudio } from 'react-icons/ai'
 
 export const GridNavbar = styled.nav`
     width: 100%;
@@ -120,7 +119,9 @@ export const GridSortBar = styled.div`
     }
 `;
 
-export const GridSortItem = styled.div`
+export const GridSortItem = styled.button`
+    border: none;
+
     &:hover {
         cursor: pointer;
         color: dodgerblue;
@@ -128,7 +129,7 @@ export const GridSortItem = styled.div`
 `;
 
 export const SortIcon = styled.div`
-    font-size: 2rem;
+    font-size: 1.3rem;
 
     &:hover {
         color: dodgerblue;
@@ -143,7 +144,7 @@ export const SortName = styled.p`
 export const GridContainer = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     padding: 1.5rem;
 
@@ -161,10 +162,10 @@ export const GridContainer = styled.div`
 `;
 
 export const AudioCard = styled.div`
-    max-width: 350px;
+    max-width: 300px;
     width: 100%;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -174,7 +175,7 @@ export const AudioCard = styled.div`
 
     @media screen and (max-width: 640px){
         margin: 0 auto;
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     @media screen and (max-width: 480px){
@@ -183,19 +184,21 @@ export const AudioCard = styled.div`
     }
 `;
 
-export const AudioIcon = styled(AiFillAudio)`
+export const AudioIcon = styled.img`
     width: 100%;
     height: 130px;
     text-align: center;
-	padding: 1.5rem;
+	padding: 0.2rem;
     border-radius: 5px 5px;
     color: dodgerblue;
     background: #eee;
+    object-fit: center;
+
 `;
 
 export const AudioMedia = styled.audio`
     width: 100%;
-    height: 50px;
+    height: 35px;
     border-radius: 15px;
     justify-content: center;
 `;
@@ -224,11 +227,11 @@ export const MediaInfo = styled.div`
 export const MediaDuration = styled.p`
     padding-top: 4px;
     font-size: 11px;
-    color: #333;
+    color: #555;
 `;
 
 export const MediaAdded = styled.p`
     padding-top: 4px;
     font-size: 11px;
-    color: #333;
+    color: #555;
 `;
