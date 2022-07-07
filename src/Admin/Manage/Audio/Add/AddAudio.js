@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  PageSection,
   PageContainer,
   PageHeading,
   AddAudioForm,
   FormGroup,
   InputLabel,
   FormField,
+  FormTypeSelection,
   SubmitGroup,
   FormButton,
   ImageSection,
@@ -21,11 +21,12 @@ function AddAudio() {
   const navigate = useNavigate();
 
   const [values, setValues] = useState({
+    audioURL: '',
     audioTitle: '',
     audioAuthor: '',
     audioCategory: '',
+    audioType: '',
     mediaDuration: '',
-    audioSource: '',
   });
   const [imagestring, setImageString] = useState({ audioImage: '' });
 
@@ -80,13 +81,13 @@ function AddAudio() {
 
 	// replace values below with whatever data is to be posted
 
+        audioURL: values.audioURL,
         audioTitle: values.audioTitle,
         audioAuthor: values.audioAuthor,
         audioCategory: values.audioCategory,
-        mediaAdded: Date().toLocaleString(),
+        mediaAdded: new Date().toDateString(),
         mediaDuration: values.mediaDuration,
         audioImage: imagestring,
-        audioSource: values.audioSource,
       }),
     };
 
@@ -115,11 +116,21 @@ function AddAudio() {
   return (
     // REPEAT THIS PROCES FOR ALL REQUIRED PAGES (Audio, Escape, Podcast, Story & Video) then
     // implement GET & Update requests.
-    <PageSection>
-      <PageContainer>
+    <PageContainer>
         <PageHeading>Add Audio</PageHeading>
 
         <AddAudioForm onSubmit={(e) => PostFormDataToAPI(e)}>
+          <FormGroup>
+            <InputLabel>Audio URL:</InputLabel>
+            <FormField
+              placeholder='Audio URL'
+              type='text'
+              name='AudioURL'
+              id='audioURL'
+              value={values.audioURL}
+              onChange={(e) => HandleStateChange(e)}
+            />
+          </FormGroup>
           <FormGroup>
             <InputLabel>Audio Title:</InputLabel>
             <FormField
@@ -154,6 +165,22 @@ function AddAudio() {
             />
           </FormGroup>
           <FormGroup>
+            <InputLabel>Audio Type:</InputLabel>
+            <FormTypeSelection
+              placeholder='Audio Type'
+              type='text'
+              name='Type'
+              id='audioType'
+              value={values.audioType}
+              onChange={(e) => HandleStateChange(e)}
+            >
+            <option value=""></option>
+              <option value="Music">Music</option>
+              <option value="Podcast">Podcast</option>
+              <option value="Audiobook">Audiobook</option>
+            </FormTypeSelection>
+          </FormGroup>
+          <FormGroup>
             <InputLabel>Audio Duration:</InputLabel>
             <FormField
               placeholder='Audio Duration'
@@ -175,17 +202,6 @@ function AddAudio() {
               />
             </ImageUploadOptions>
           </ImageSection>
-          <FormGroup>
-            <InputLabel>Audio Source (URL):</InputLabel>
-            <FormField
-              placeholder='Audio Source URL'
-              type='text'
-              name='AudioSourceURL'
-              id='audioSource'
-              value={values.audioSource}
-              onChange={(e) => HandleStateChange(e)}
-            />
-          </FormGroup>
           <SubmitSection>
             <InputLabel>Add Audio to Database</InputLabel>
             <SubmitGroup>
@@ -194,7 +210,6 @@ function AddAudio() {
           </SubmitSection>
         </AddAudioForm>
       </PageContainer>
-    </PageSection>
   );
 }
 

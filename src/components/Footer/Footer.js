@@ -27,18 +27,15 @@ const Footer = () => {
             <FooterLinksItems>
               <FooterLinkTitle>About Us</FooterLinkTitle>
               <FooterLink to='/about' target='_blank'>About</FooterLink>
-              <FooterLink to='//www.nhs.uk/mental-health/' target='_blank'>Mental Health</FooterLink>
               <FooterLink to='/privacy' target='_blank'>Privacy Policy</FooterLink>
-              <FooterLink to='/tos' target='_blank'>Terms of Service</FooterLink>
+              <FooterLink to='/terms' target='_blank'>Terms of Service</FooterLink>
             </FooterLinksItems>
             </FooterLinksWrapper>    
             <FooterLinksWrapper>    
             <FooterLinksItems>
               <FooterLinkTitle>Resources</FooterLinkTitle>
-              <FooterLink to='/videos' target='_blank'>Videos</FooterLink>
-              <FooterLink to='/audiobooks' target='_blank'>Audiobooks</FooterLink>
-              <FooterLink to='/podcasts' target='_blank'>Podcasts</FooterLink>
-              <FooterLink to='/selfhelp' target='_blank'>Self Help Guides</FooterLink>
+              <FooterLink to='/video' target='_blank'>Video</FooterLink>
+              <FooterLink to='/audio' target='_blank'>Audio</FooterLink>
             </FooterLinksItems>
             <FooterLinksItems>
               <FooterLinkTitle>Social Media</FooterLinkTitle>

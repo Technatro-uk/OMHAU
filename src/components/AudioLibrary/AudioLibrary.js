@@ -1,5 +1,9 @@
 import React from 'react';
+import { BsListStars } from 'react-icons/bs';
 import { FiSearch } from 'react-icons/fi'
+import { GiHealthNormal } from 'react-icons/gi';
+import { MdOndemandVideo } from 'react-icons/md';
+import { RiMentalHealthFill } from 'react-icons/ri';
 import {
   GridNavbar,
   NavTitle,
@@ -17,17 +21,16 @@ import {
   AudioCard,
   AudioIcon,
   AudioMedia,
-  CardInfo,
-  CardTitle,
-  CardSource,
+  AudioInfo,
+  AudioTitle,
+  AudioSource,
   MediaDuration,
   MediaAdded,
   MediaInfo
-} from "./AudioGrid.Elements";
-import { MenuSortData } from '../../Data/MenuFilterData';
+} from "./AudioLibrary.Elements";
 import { AudioData } from '../../Data/AudioData';
 
-const AudioGrid = () => {
+const AudioLibrary = () => {
   return (
     <>
       <GridNavbar>
@@ -45,20 +48,35 @@ const AudioGrid = () => {
         </NavSearch>
       </GridNavbar>
         <NavDescription>
-          This is where you will find audio related content like Audiobooks, 
-          Guides, How-To's and more.
+          This is where you will find audio related content like Music, Audiobooks, 
+          Guides and more.
         </NavDescription>
-      <GridSortBar>
-      { MenuSortData.map((vSortData) => {
-              return (
-                <GridSortItem>
-                  <SortIcon>{vSortData.menuIcon}</SortIcon>
-
-                  <SortName>{vSortData.menuTitle}</SortName>
-                </GridSortItem>
-              );
-          })}
-      </GridSortBar>
+        <GridSortBar>
+          <GridSortItem>
+            <SortIcon>
+              <MdOndemandVideo />
+            </SortIcon>
+            <SortName>Home</SortName>
+          </GridSortItem>
+          <GridSortItem>
+            <SortIcon>
+              <BsListStars />
+            </SortIcon>
+            <SortName>Featured</SortName>
+          </GridSortItem>
+          <GridSortItem>
+            <SortIcon>
+              <GiHealthNormal />
+            </SortIcon>
+            <SortName>Health & Wellbeing</SortName>
+          </GridSortItem>
+          <GridSortItem>
+            <SortIcon>
+              <RiMentalHealthFill />
+            </SortIcon>
+            <SortName>Mental Health</SortName>
+          </GridSortItem>
+        </GridSortBar>
 
       <GridContainer>
           {
@@ -68,13 +86,13 @@ const AudioGrid = () => {
                         <AudioIcon>
                         </AudioIcon>
                       <AudioMedia
-                        src={vData.audioSrc}
+                        src={vData.audioURL}
                         controls={true}
                       />
-                      <CardInfo>
-                        <CardTitle>{vData.cardTitle}</CardTitle>
-                        <CardSource>{vData.cardSource}</CardSource>
-                      </CardInfo>
+                      <AudioInfo>
+                        <AudioTitle>{vData.audioTitle}</AudioTitle>
+                        <AudioSource>{vData.audioAuthor}</AudioSource>
+                      </AudioInfo>
                         <MediaInfo>
                             <MediaAdded>{vData.mediaAdded}</MediaAdded>
                             <MediaDuration>{vData.mediaDuration}</MediaDuration>
@@ -88,4 +106,4 @@ const AudioGrid = () => {
   );
 }
 
-export {AudioGrid};
+export {AudioLibrary};

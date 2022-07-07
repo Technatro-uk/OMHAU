@@ -145,8 +145,8 @@ export const GridContainer = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1.2rem;
+    padding: 1.2rem;
 
     @media screen and (max-width: 940px){
         grid-template-columns: repeat(3, 1fr);
@@ -162,10 +162,10 @@ export const GridContainer = styled.div`
 `;
 
 export const AudioCard = styled.div`
-    max-width: 300px;
+    max-width: 320px;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -175,25 +175,42 @@ export const AudioCard = styled.div`
 
     @media screen and (max-width: 640px){
         margin: 0 auto;
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     @media screen and (max-width: 480px){
         margin: 0 auto;
-        padding: 1rem;
+        padding: 0.3rem;
     }
 `;
 
+export const AudioHeading = styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+`;
+
+export const MediaCategory = styled.p`
+    padding-top: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #edab4e;
+`;
+
+export const MediaType = styled.p`
+    padding-top: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bb76cf;
+`;
+
 export const AudioIcon = styled.img`
-    width: 100%;
     height: 130px;
+    width: 100%;
     text-align: center;
 	padding: 0.2rem;
     border-radius: 5px 5px;
-    color: dodgerblue;
-    background: #eee;
-    object-fit: center;
-
+    object-fit: center; 
 `;
 
 export const AudioMedia = styled.audio`
@@ -203,17 +220,17 @@ export const AudioMedia = styled.audio`
     justify-content: center;
 `;
 
-export const CardInfo = styled.div`
+export const AudioInfo = styled.div`
     display: flex;
     justify-content: space-between;
 `;
 
-export const CardTitle = styled.h4`
+export const AudioTitle = styled.h4`
     padding-top: 4px;
     font-size: 11px;
 `;
 
-export const CardSource = styled.p`
+export const AudioSource = styled.p`
     padding-top: 4px;
     font-size: 11px;
     color: #333;

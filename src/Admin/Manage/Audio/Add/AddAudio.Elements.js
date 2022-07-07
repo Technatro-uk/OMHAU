@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
-export const PageSection = styled.section`
-    height: 100vh;
-    padding-top: 5px;
-`;
-
 export const PageContainer = styled.div`
+    padding-top: 20px;
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 64px;
@@ -32,7 +28,7 @@ export const PageHeading = styled.h3`
 
 export const AddAudioForm = styled.form`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px;
     background-color: #fff;
     padding: 12px;
@@ -64,6 +60,21 @@ export const FormField = styled.input`
     border-radius: 8px;
     padding: 6px 12px;
     background-color: #f3f3f3;
+
+    &:focus {
+        box-shadow: #333 0px 4px 12px;
+    }
+`;
+
+export const FormTypeSelection = styled.select`
+    appearance: none;
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 6px 12px;
+    background-color: #b0ceeb;
 
     &:focus {
         box-shadow: #333 0px 4px 12px;
@@ -109,7 +120,7 @@ export const ImageSection = styled.div`
     height: 100%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 10px;
+    padding: 5px;
 `;
 
 export const ImageUploadOptions = styled.div`
@@ -133,7 +144,7 @@ export const InputImage = styled.img`
 
 export const ImageFileUpload = styled.input`
     height: 100%;
-    width: 200px;
+    width: 100%;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     color: dodgerblue;
@@ -149,7 +160,8 @@ export const SubmitGroup = styled.div`
 
 export const SubmitSection = styled.div`
     height: 80px;
-    border: 1px solid dodgerblue;
+    box-shadow: dodgerblue 0px 1px 4px;
+    // border: 1px solid dodgerblue;
     border-radius: 5px;
     padding: 10px;
     grid-column: 2;

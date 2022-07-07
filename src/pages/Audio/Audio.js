@@ -1,12 +1,12 @@
 import React from 'react';
-import { AudioGrid } from '../../components/AudioGrid/AudioGrid';
+import { AudioLibrary } from '../../components/AudioLibrary/AudioLibrary';
 
 const Audio = () => {
     
     
   return (
     <>
-      <AudioGrid />
+      <AudioLibrary />
     </>
   );
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { BsListStars } from 'react-icons/bs';
+import { BsListStars, BsCalendarCheck } from 'react-icons/bs';
 import { FiSearch } from 'react-icons/fi'
 import { GiHealthNormal } from 'react-icons/gi';
-import { MdOndemandVideo } from 'react-icons/md';
+import { MdOndemandVideo, MdOutlinePersonOutline, MdTimer } from 'react-icons/md';
 import { RiMentalHealthFill } from 'react-icons/ri';
 import {
   GridNavbar,
@@ -19,15 +19,18 @@ import {
   SortName,
   GridContainer,
   AudioCard,
+  AudioHeading,
+  MediaCategory,
+  MediaType,
   AudioIcon,
   AudioMedia,
-  CardInfo,
-  CardTitle,
-  CardSource,
+  AudioInfo,
+  AudioTitle,
+  AudioSource,
   MediaDuration,
   MediaAdded,
   MediaInfo
-} from '../../../../components/AudioGrid/AudioGrid.Elements';
+} from '../../../../components/AudioLibrary/AudioLibrary.Elements';
 
 export default class GetAudio extends Component {
 
@@ -51,7 +54,7 @@ export default class GetAudio extends Component {
     }
 
     componentDidUpdate(){
-        this.getDataFromAPI();
+        // this.getDataFromAPI();
     }
 
   render() {
@@ -105,20 +108,29 @@ export default class GetAudio extends Component {
         </GridSortBar>
 
         <GridContainer>
-          {audioLibrary.map((aData) => {
+          {audioLibrary.map((aData, id) => {
             return (
-              <AudioCard>
-                <AudioIcon src={aData.audioImage}></AudioIcon>
-                <AudioMedia src={aData.audioSource} controls={true} />
-                <CardInfo>
-                  <CardTitle>{aData.audioTitle}</CardTitle>
-                  <CardSource>{aData.audioAuthor}</CardSource>
-                </CardInfo>
-                <MediaInfo>
-                  <MediaAdded>{aData.mediaAdded}</MediaAdded>
-                  <MediaDuration>{aData.mediaDuration}</MediaDuration>
-                </MediaInfo>
-              </AudioCard>
+              <AudioCard key={id}>
+                <AudioHeading>
+                  <MediaCategory>{aData.audioCategory}</MediaCategory>
+                  <MediaType>{aData.audioType}</MediaType>
+                  </AudioHeading>
+                        <AudioIcon src={aData.audioImage} />
+
+                      <AudioMedia
+                        src={aData.audioURL}
+                        controls={true}/>
+
+                      <AudioInfo>
+                        <AudioTitle>{aData.audioTitle}</AudioTitle>
+                            <MediaDuration><MdTimer size='1.3em' /> {aData.mediaDuration}</MediaDuration>
+                      </AudioInfo>
+
+                        <MediaInfo>
+                            <MediaAdded><BsCalendarCheck size='1.3em' /> {aData.mediaAdded}</MediaAdded>
+                        <AudioSource><MdOutlinePersonOutline size='1.3em' /> {aData.audioAuthor}</AudioSource>
+                        </MediaInfo>
+                    </AudioCard>
             );
           })}
         </GridContainer>
