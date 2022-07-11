@@ -22,11 +22,11 @@ import {
   MediaDuration,
   MediaAdded,
   MediaInfo
-} from "./VideoGrid.Elements";
+} from "./VideoLibrary.Elements";
 import { MenuSortData } from '../../Data/MenuFilterData';
 import { VideoData } from '../../Data/VideoData';
 
-const VideoGrid = () => {
+const VideoLibrary = () => {
   return (
     <>
       <GridNavbar>
@@ -86,4 +86,4 @@ const VideoGrid = () => {
   );
 }
 
-export {VideoGrid};
+export {VideoLibrary};

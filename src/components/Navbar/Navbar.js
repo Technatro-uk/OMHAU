@@ -64,6 +64,11 @@ const Navbar = () => {
                 </NavLinks>
               </NavItem>
               <NavItem>
+                <NavLinks to='/stories'>
+                  Stories
+                </NavLinks>
+              </NavItem>
+              <NavItem>
                 <NavLinks to='/quickescapes'>
                   Quick Escapes
                 </NavLinks>

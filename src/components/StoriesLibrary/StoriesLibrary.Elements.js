@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const QuickEscapesSection = styled.div`
+export const StorySection = styled.div`
   // height: 100vh;
   padding: 20px;
   display: flex;
@@ -10,7 +10,7 @@ export const QuickEscapesSection = styled.div`
   align-items: center;
 `;
 
-export const QuickEscapesWrapper = styled.div`
+export const StoryWrapper = styled.div`
   display: grid;
   grid-template-column: repeat(2, 1fr);
   align-items: center;
@@ -24,13 +24,13 @@ export const QuickEscapesWrapper = styled.div`
   }
 `;
 
-export const QuickEscapesHeading = styled.h1`
+export const StoryHeading = styled.h1`
   color: #777;
   font-size: 28px;
   margin-bottom: 14px;
 `;
 
-export const QuickEscapesContainer = styled.div`
+export const StoryContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ export const QuickEscapesContainer = styled.div`
   }
 `;
 
-export const QuickEscapesCard = styled(Link)`
+export const StoryCard = styled(Link)`
   background: #fff;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
   width: 180px;
@@ -69,7 +69,7 @@ export const QuickEscapesCard = styled(Link)`
   }
 `;
 
-export const QuickEscapesCardInfo = styled.div`
+export const StoryCardInfo = styled.div`
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -79,26 +79,26 @@ export const QuickEscapesCardInfo = styled.div`
   color: #fff;
 `;
 
-export const QuickEscapesCardIcon = styled.div`
+export const StoryCardIcon = styled.div`
   margin: 16px 0;
 `;
 
-export const QuickEscapesCardPlan = styled.h3`
+export const StoryCardPlan = styled.h3`
   margin-bottom: 5px;
   font-size: 16px;
 `;
 
-export const QuickEscapesCardCost = styled.h4`
+export const StoryCardCost = styled.h4`
   font-size: 20px;
   color: #333;
 `;
 
-export const QuickEscapesCardLength = styled.p`
+export const StoryCardLength = styled.p`
   font-size: 14px;
   margin-bottom: 14px;
 `;
 
-export const QuickEscapesCardFeatures = styled.ul`
+export const StoryCardFeatures = styled.ul`
   margin: 16px 0 12px;
   list-style: none;
   display: flex;
@@ -107,6 +107,6 @@ export const QuickEscapesCardFeatures = styled.ul`
   color: #a9b3c1;
 `;
 
-export const QuickEscapesCardFeature = styled.li`
+export const StoryCardFeature = styled.li`
   margin-bottom: 10px;
 `;

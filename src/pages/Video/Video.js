@@ -1,10 +1,10 @@
 import React from 'react';
-import { VideoGrid } from '../../components/VideoGrid/VideoGrid';
+import { VideoLibrary } from '../../components/VideoLibrary/VideoLibrary';
 
 const Video = () => {
   return (
     <>
-      <VideoGrid />
+      <VideoLibrary />
     </>
   );
 }

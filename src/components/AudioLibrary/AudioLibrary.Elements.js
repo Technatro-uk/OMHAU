@@ -15,9 +15,9 @@ export const GridNavbar = styled.nav`
 `;
 
 export const NavTitle = styled.h1`
-    margin: 12px;
+    margin-left: 3rem;
     color: dodgerblue;
-    font-size: 30px;
+    font-size: 35px;
 
     @media screen and (max-width: 940px){
         font-size: 28px;
@@ -104,12 +104,12 @@ export const FormBtn = styled.button`
 export const GridSortBar = styled.div`
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.5rem;
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee;
     color: #5E5E5E;
     text-align: center;
-    margin: 0.5rem 1.5rem;
+    margin: 0.5rem 3rem;
 
     @media screen and (max-width: 640px){
         display: grid;

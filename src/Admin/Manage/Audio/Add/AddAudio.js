@@ -28,7 +28,6 @@ function AddAudio() {
     audioType: '',
     mediaDuration: '',
   });
-  const [imagestring, setImageString] = useState({ audioImage: '' });
 
   function HandleStateChange(e) {
     const newvalues = { ...values };
@@ -39,6 +38,7 @@ function AddAudio() {
 
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
+  const [imagestring, setImageString] = useState({ audioImage: '' });
 
   useEffect(() => {
     if (!selectedFile) {
@@ -79,12 +79,13 @@ function AddAudio() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
 
-	// replace values below with whatever data is to be posted
+	  // replace values below with whatever data is to be posted
 
         audioURL: values.audioURL,
         audioTitle: values.audioTitle,
         audioAuthor: values.audioAuthor,
         audioCategory: values.audioCategory,
+        audioType: values.audioType,
         mediaAdded: new Date().toDateString(),
         mediaDuration: values.mediaDuration,
         audioImage: imagestring,
@@ -92,20 +93,19 @@ function AddAudio() {
     };
 
     // replace URL below with Projects API URL
-
     fetch('https://localhost:7021/api/Audio/AddAudio', requestOptions) // THIS WORKS! :)
       .then((response) => response.json())
       .then(
         (result) => {
 
-	  // Display result as an alert (confirmation)
+	        // Display result as an alert (confirmation)
           alert(result); // Confirmation of posted audio is working!
 
-	  // Print result to console
+	        // Print result to console
           console.log(result); // Print confirmation result to console
 
-	  // OPTIONAL: Redirect page on successfull form submission
-          navigate('/getaudio'); // Redirect to 'audio' page
+	        // OPTIONAL: Redirect page on successfull form submission
+          navigate('/getaudio'); // Redirect to 'Admins Audio' page
         },
         (error) => {
           alert('Error:' + error);

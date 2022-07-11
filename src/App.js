@@ -13,10 +13,17 @@ import Resources from './components/Resources/Resources';
 import Home from './pages/HomePage/Home';
 import Video from './pages/Video/Video';
 import Audio from './pages/Audio/Audio';
+import Stories from './pages/Stories/Stories';
 
 // Admin Imports
+// Audio
 import AddAudio from './Admin/Manage/Audio/Add/AddAudio';
 import GetAudio from './Admin/Manage/Audio/Get/GetAudio';
+// Video
+import AddVideo from './Admin/Manage/Video/Add/AddVideo';
+import GetVideo from './Admin/Manage/Video/Get/GetVideo';
+// Stories
+import GetStories from './Admin/Manage/Stories/Get/GetStories';
 
 function App() {
   return (
@@ -25,13 +32,42 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
+        {/* Public */}
         <Route path='/' element={<Home />} />
         <Route path='/resources' element={<Resources />} />
-        <Route path='/video' element={<Video />} />
+
+        {/* Audio Routes */}
+        {/* Public */}
         <Route path='/audio' element={<Audio />} />
-        <Route path='/quickescapes' element={<QuickEscapes />} />
+        {/* Admin */}
         <Route path='/addaudio' element={<AddAudio />} />
         <Route path='/getaudio' element={<GetAudio />} />
+        
+        {/* Video Routes */}
+        {/* Public */}
+        <Route path='/video' element={<Video />} />
+        {/* Admin */}
+        <Route path='/addvideo' element={<AddVideo />} />
+        <Route path='/getvideo' element={<GetVideo />} />
+        
+        {/* Story Routes */}
+        {/* Public */}
+        <Route path='/stories' element={<Stories />} />
+        {/* Admin */}
+        <Route path='/getstories' element={<GetStories />} />
+        
+        {/* Book Routes */}
+        {/* Public */}
+        
+        {/* Admin */}
+
+        
+        {/* Quick Escape Routes */}
+        {/* Public */}
+        
+        <Route path='/quickescapes' element={<QuickEscapes />} />
+        {/* Admin */}
+        
       </Routes>
     </Router>
   );

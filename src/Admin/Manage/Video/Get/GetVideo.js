@@ -21,30 +21,26 @@ import {
   SortIcon,
   SortName,
   GridContainer,
-  AudioCard,
-  AudioHeading,
-  MediaCategory,
-  MediaType,
-  AudioIcon,
-  AudioMedia,
-  AudioInfo,
-  AudioTitle,
-  AudioSource
-} from "../../../../components/AudioLibrary/AudioLibrary.Elements";
+  VideoCard,
+  VideoMedia,
+  CardInfo,
+  CardTitle,
+  CardSource
+} from "../../../../components/VideoLibrary/VideoLibrary.Elements";
 
-export default class GetAudio extends Component {
+export default class GetVideo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      audioLibrary: [],
+      VideoLibrary: [],
     };
   }
 
   getDataFromAPI() {
-    fetch("https://localhost:7021/api/Audio")
+    fetch("https://localhost:7021/api/Video")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ audioLibrary: data });
+        this.setState({ VideoLibrary: data });
       });
   }
 
@@ -57,16 +53,16 @@ export default class GetAudio extends Component {
   }
 
   render() {
-    const { audioLibrary } = this.state;
+    const { VideoLibrary } = this.state;
 
     return (
       <>
         <GridNavbar>
-          <NavTitle>Audio Library</NavTitle>
+          <NavTitle>Video Library</NavTitle>
           <NavSearch>
             <NavForm>
               <InputContainer>
-                <FormInput type="text" placeholder="Search audio.." />
+                <FormInput type="text" placeholder="Search Video.." />
               </InputContainer>
               <FormBtn>
                 <FiSearch />
@@ -75,8 +71,7 @@ export default class GetAudio extends Component {
           </NavSearch>
         </GridNavbar>
         <NavDescription>
-          This is where you will find audio related content like Audiobooks,
-          Guides, How-To's and more.
+        This is where you will find video related content like Tutorials, Guides, Stories and more.
         </NavDescription>
         <GridSortBar>
           <GridSortItem>
@@ -106,24 +101,17 @@ export default class GetAudio extends Component {
         </GridSortBar>
 
         <GridContainer>
-          {audioLibrary.map((aData, id) => {
+          {VideoLibrary.map((vData, id) => {
             return (
-              <AudioCard key={id}>
-                <AudioHeading>
-                  <MediaCategory>{aData.audioCategory}</MediaCategory>
-                  <MediaType>{aData.audioType}</MediaType>
-                </AudioHeading>
-                <AudioIcon src={aData.audioImage} />
-
-                <AudioMedia src={aData.audioURL} controls={true} />
-
-                <AudioInfo>
-                  <AudioTitle>{aData.audioTitle}</AudioTitle>
-                  <AudioSource>
-                    <MdOutlinePersonOutline size="1.3em" /> {aData.audioAuthor}
-                  </AudioSource>
-                </AudioInfo>
-              </AudioCard>
+              <VideoCard key={id}>
+                <VideoMedia src={vData.videoSource} controls={true} />
+                <CardInfo>
+                  <CardTitle>{vData.videoTitle}</CardTitle>
+                  <CardSource>
+                    <MdOutlinePersonOutline size="1.3em" /> {vData.videoAuthor}
+                  </CardSource>
+                </CardInfo>
+              </VideoCard>
             );
           })}
         </GridContainer>
