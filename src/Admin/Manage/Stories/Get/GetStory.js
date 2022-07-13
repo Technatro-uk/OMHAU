@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import { Button } from "../../globalStyles";
+import { Button } from "../../../../globalStyles";
 import { IconContext } from "react-icons/lib";
 import { FiSearch } from 'react-icons/fi';
 import { MdOndemandVideo } from "react-icons/md";
 import { BsListStars } from "react-icons/bs";
 import { GiHealthNormal } from "react-icons/gi";
 import { RiMentalHealthFill } from "react-icons/ri";
-import CustomCarousel from '../../components/Carousel/CustomCarousel/CustomCarousel';
+import CustomCarousel from '../../../../components/Carousel/CustomCarousel/CustomCarousel';
 import {
   GridNavbar,
   NavTitle,
@@ -23,7 +23,6 @@ import {
   SortName,
   StoryWrapper,
   StoryContainer,
-  SectionHeading,
   StoryCard,
   StoryCardInfo,
   StoryCardTitle,
@@ -32,7 +31,7 @@ import {
   StoryCardInformation,
   StoryCardCategory,
   StoryCardDescription,
-} from "../../components/StoriesLibrary/StoriesLibrary.Elements";
+} from "../../../../components/StoriesLibrary/StoriesLibrary.Elements";
 
 export default class StoriesLibrary extends Component {
   constructor(props) {
@@ -63,10 +62,10 @@ export default class StoriesLibrary extends Component {
 
     return (
       <>
-        <IconContext.Provider value={{ color: "dodgerblue", size: 26 }}>
+        <IconContext.Provider value={{ color: "dodgerblue", size: 36 }}>
           <StoryWrapper>
           <GridNavbar>
-        <NavTitle>Story Library</NavTitle>
+        <NavTitle>Video Library</NavTitle>
         <NavSearch>
           <NavForm>
             <InputContainer>
@@ -79,28 +78,29 @@ export default class StoriesLibrary extends Component {
         </NavSearch>
       </GridNavbar>
         <NavDescription>
-          A collection of stories from various author's & online sources.
+          This is where you will find video related content like Tutorials, 
+          Guides, Stories and more.
         </NavDescription>
         <GridSortBar>
-          <GridSortItem onClick={() => {}}>
+          <GridSortItem>
             <SortIcon>
               <MdOndemandVideo />
             </SortIcon>
             <SortName>Home</SortName>
           </GridSortItem>
-          <GridSortItem onClick={() => {}}>
+          <GridSortItem>
             <SortIcon>
               <BsListStars />
             </SortIcon>
             <SortName>Featured</SortName>
           </GridSortItem>
-          <GridSortItem onClick={() => {}}>
+          <GridSortItem>
             <SortIcon>
               <GiHealthNormal />
             </SortIcon>
             <SortName>Health & Wellbeing</SortName>
           </GridSortItem>
-          <GridSortItem onClick={() => {}}>
+          <GridSortItem>
             <SortIcon>
               <RiMentalHealthFill />
             </SortIcon>
@@ -111,9 +111,6 @@ export default class StoriesLibrary extends Component {
             {/* CAROUSEL FOR RECENTLY ADDED STORIES.. */}
             <CustomCarousel dataSource={StoryLibrary}/>
 
-            <SectionHeading>
-            All stories
-          </SectionHeading>
             <StoryContainer>
               {StoryLibrary.map((st, id) => {
                 return (
@@ -132,13 +129,9 @@ export default class StoriesLibrary extends Component {
                           {st.storyDescription}
                         </StoryCardDescription>
                       </StoryCardInformation>
-                      <a
-                        href={st.storySourceURL ? st.storySourceURL : ""}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <Link to={st.storySourceURL ? st.storySourceURL : ""}>
                         <Button primary>Read story</Button>
-                      </a>
+                      </Link>
                     </StoryCardInfo>
                   </StoryCard>
                 );

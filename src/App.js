@@ -23,7 +23,8 @@ import GetAudio from './Admin/Manage/Audio/Get/GetAudio';
 import AddVideo from './Admin/Manage/Video/Add/AddVideo';
 import GetVideo from './Admin/Manage/Video/Get/GetVideo';
 // Stories
-import GetStories from './Admin/Manage/Stories/Get/GetStories';
+import AddStories from './Admin/Manage/Stories/Add/AddStory';
+import GetStories from './Admin/Manage/Stories/Get/GetStory';
 
 function App() {
   return (
@@ -54,7 +55,8 @@ function App() {
         {/* Public */}
         <Route path='/stories' element={<Stories />} />
         {/* Admin */}
-        <Route path='/getstories' element={<GetStories />} />
+        <Route path='/story/add' element={<AddStories />} />
+        <Route path='/story/get' element={<GetStories />} />
         
         {/* Book Routes */}
         {/* Public */}

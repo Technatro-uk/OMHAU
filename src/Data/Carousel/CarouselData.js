@@ -1,6 +1,10 @@
 // replace data in this file with free resources found online
 
-export const data = [
+export const dataTitle = [
+	"Need to chat with someone?"
+];
+
+export const supportData = [
 	{
 		title: 'Contact a Samaritan',
 		description: "If you need someone to talk to, we listen. We won't judge or tell you what to do.",

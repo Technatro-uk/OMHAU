@@ -1,5 +1,9 @@
 import React from 'react';
-import { FiSearch } from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi';
+import { MdOndemandVideo } from "react-icons/md";
+import { BsListStars } from "react-icons/bs";
+import { GiHealthNormal } from "react-icons/gi";
+import { RiMentalHealthFill } from "react-icons/ri";
 import {
   GridNavbar,
   NavTitle,
@@ -23,7 +27,6 @@ import {
   MediaAdded,
   MediaInfo
 } from "./VideoLibrary.Elements";
-import { MenuSortData } from '../../Data/MenuFilterData';
 import { VideoData } from '../../Data/VideoData';
 
 const VideoLibrary = () => {
@@ -31,7 +34,6 @@ const VideoLibrary = () => {
     <>
       <GridNavbar>
         <NavTitle>Video Library</NavTitle>
-
         <NavSearch>
           <NavForm>
             <InputContainer>
@@ -47,17 +49,32 @@ const VideoLibrary = () => {
           This is where you will find video related content like Tutorials, 
           Guides, Stories and more.
         </NavDescription>
-      <GridSortBar>
-      { MenuSortData.map((vSortData) => {
-              return (
-                <GridSortItem>
-                  <SortIcon>{vSortData.menuIcon}</SortIcon>
-
-                  <SortName>{vSortData.menuTitle}</SortName>
-                </GridSortItem>
-              );
-          })}
-      </GridSortBar>
+        <GridSortBar>
+          <GridSortItem>
+            <SortIcon>
+              <MdOndemandVideo />
+            </SortIcon>
+            <SortName>Home</SortName>
+          </GridSortItem>
+          <GridSortItem>
+            <SortIcon>
+              <BsListStars />
+            </SortIcon>
+            <SortName>Featured</SortName>
+          </GridSortItem>
+          <GridSortItem>
+            <SortIcon>
+              <GiHealthNormal />
+            </SortIcon>
+            <SortName>Health & Wellbeing</SortName>
+          </GridSortItem>
+          <GridSortItem>
+            <SortIcon>
+              <RiMentalHealthFill />
+            </SortIcon>
+            <SortName>Mental Health</SortName>
+          </GridSortItem>
+        </GridSortBar>
 
       <GridContainer>
           {
