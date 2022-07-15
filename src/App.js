@@ -6,7 +6,7 @@ import { GlobalStyle } from './globalStyles';
 // Component Imports
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar/Navbar';
-import QuickEscapes from './components/QuickEscapes/QuickEscapes';
+import QuickEscapes from './components/Library/QuickEscapes/QuickEscapes';
 import Resources from './components/Resources/Resources';
 
 // Page Imports
@@ -25,6 +25,10 @@ import GetVideo from './Admin/Manage/Video/Get/GetVideo';
 // Stories
 import AddStories from './Admin/Manage/Stories/Add/AddStory';
 import GetStories from './Admin/Manage/Stories/Get/GetStory';
+
+// Quick Escapes
+import AddQuickEscape from './Admin/Manage/QuickEscape/Add/AddEscape';
+import GetQuickEscape from './Admin/Manage/QuickEscape/Get/GetQuickEscape';
 
 function App() {
   return (
@@ -69,6 +73,8 @@ function App() {
         
         <Route path='/quickescapes' element={<QuickEscapes />} />
         {/* Admin */}
+        <Route path='/quickescapes/add' element={<AddQuickEscape />} />
+        <Route path='/quickescapes/get' element={<GetQuickEscape />} />
         
       </Routes>
     </Router>

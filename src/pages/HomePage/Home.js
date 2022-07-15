@@ -3,7 +3,7 @@ import { Information1, Information3 } from './Data';
 import InfoSection from '../../components/InfoSection/InfoSection';
 import Health from '../../components/Health/Health';
 import Carousel from '../../components/Carousel/Carousel';
-import QuickEscapes from '../../components/QuickEscapes/QuickEscapes';
+import QuickEscapes from '../../components/Library/QuickEscapes/QuickEscapes';
 import Footer from '../../components/Footer/Footer';
 
 

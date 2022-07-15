@@ -37,7 +37,7 @@ export default class GetVideo extends Component {
   }
 
   getDataFromAPI() {
-    fetch("https://localhost:7021/api/Video")
+    fetch("https://localhost:7021/api/Video/getallvideos")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ VideoLibrary: data });

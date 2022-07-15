@@ -1,5 +1,5 @@
 import React from 'react';
-import StoriesLibrary from '../../components/StoriesLibrary/StoriesLibrary'
+import StoriesLibrary from '../../components/Library/Stories/StoriesLibrary'
 
 const Stories = () => {
     

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { BsListStars } from "react-icons/bs";
 
 export const HealthContainer = styled.div`
     height: 500px;
@@ -37,15 +38,16 @@ export const HealthWrapper = styled.div`
     }
 `;
 
-export const HealthCard = styled.div`
+export const HealthCard = styled(Link)`
     background: #FFF;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
-    max-height: 340px;
-    padding: 30px;
+    max-height: 350px;
+    padding: 20px;
+    text-decoration: none;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     transition: all 0.2 ease-in-out;
 
@@ -53,6 +55,7 @@ export const HealthCard = styled.div`
         transform: scale(1.02);
         transition: all 0.2s ease-in-out;
         cursor: pointer;
+        box-shadow: 0 1px 3px dodgerblue;
     }
 `;
 
@@ -62,27 +65,31 @@ export const HealthIcon = styled.img`
     margin-bottom: 10px;
 `;
 
-export const HealthH1 = styled.h1`
-    font-size: 2.5rem;
+export const HealthH2 = styled.h2`
+    font-size: 1rem;
     color: dodgerblue;
-    margin-bottom: 64px;
+    margin-bottom: 14px;
 
     @media screen and (max-width: 480px){
         font-size: 2rem;
     }
 `;
 
-export const HealthH2 = styled.h2`
-    font-size: 1rem;
-    margin-bottom: 10px;
-`;
-
 export const HealthP = styled.p`
     font-size: 0.8rem;
     text-align: center;
+    color: #010606;
+    height: 60px;
 `;
 
-export const HealthLink = styled(Link)`
+export const HealthButtonIcon = styled.img`
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+`;
+
+export const HealthLink = styled.div`
     color: #FFF;
     background: transparent;
     font-size: 14px;

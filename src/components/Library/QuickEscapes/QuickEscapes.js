@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../globalStyles';
+import { Button } from '../../../globalStyles';
 import { GiCrystalBars } from 'react-icons/gi';
 import { GiCutDiamond, GiRock } from 'react-icons/gi';
 import { IconContext } from 'react-icons/lib';
@@ -16,7 +16,7 @@ import {
   QuickEscapesCardLength,
   QuickEscapesCardFeatures,
   QuickEscapesCardFeature
-} from './QuickEscapes.Elements';
+} from '../QuickEscapes/QuickEscapes.Elements';
 
 const QuickEscapes = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { VideoLibrary } from '../../components/VideoLibrary/VideoLibrary';
+import VideoLibrary from '../../components/VideoLibrary/VideoLibrary';
 
 const Video = () => {
   return (

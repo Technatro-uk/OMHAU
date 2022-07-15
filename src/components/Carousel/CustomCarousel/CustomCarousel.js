@@ -41,18 +41,20 @@ const CustomCarousel = ({ dataSource }) => {
             return (
               <Card key={id}>
                     <CardInfo>
-                      <CardHeading>{ds.storyTitle} written by {ds.storyAuthor}</CardHeading>
                       <CardInformation>
                         <CardCategory>
-                          {ds.storyCategory}
+                          {ds.storyCategory ? ds.storyCategory : ds.escapeType}
                         </CardCategory>
                       </CardInformation>
+                      <CardHeading>
+                        {ds.storyAuthor ? ds.storyAuthor : ds.escapeAuthor}
+                      </CardHeading>
                       <a
-                        href={ds.storySourceURL ? ds.storySourceURL : ""}
+                        href={ds.storySourceURL ? ds.storySourceURL : ds.escapeSource}
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button primary>Read story</Button>
+                        <Button primary>{ds.storySourceURL ? "Read story" : "Choose escape"}</Button>
                       </a>
                       <CardDatePublished>
                         (Added {ds.datePublished ? ds.datePublished : "today"})

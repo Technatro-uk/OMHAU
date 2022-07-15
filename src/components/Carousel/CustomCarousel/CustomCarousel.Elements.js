@@ -96,11 +96,13 @@ export const CardHeading = styled.h4`
   font-size: 14px;
   color: #333;
   height: 50px;
+  text-align: center;
+  margin: 10px;
 `;
 
 export const CardDatePublished = styled.p`
   color: #d474rf;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-weight: bold;
   margin-top: 8px;
 `;
@@ -112,7 +114,7 @@ export const CardInformation = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #a9b3c1;
+  color: darkorange;
 `;
 
 export const CardCategory = styled.li`

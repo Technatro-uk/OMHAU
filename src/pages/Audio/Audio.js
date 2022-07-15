@@ -1,5 +1,5 @@
 import React from 'react';
-import { AudioLibrary } from '../../components/AudioLibrary/AudioLibrary';
+import AudioLibrary from '../../components/Library/Audio/AudioLibrary';
 
 const Audio = () => {
     

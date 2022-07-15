@@ -31,7 +31,7 @@ import {
   StoryCardInformation,
   StoryCardCategory,
   StoryCardDescription,
-} from "../../../../components/StoriesLibrary/StoriesLibrary.Elements";
+} from '../../../../components/Library/Stories/StoriesLibrary.Elements';
 
 export default class StoriesLibrary extends Component {
   constructor(props) {

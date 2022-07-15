@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { BsListStars } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { GiHealthNormal } from "react-icons/gi";
@@ -21,16 +21,16 @@ import {
   SortIcon,
   SortName,
   GridContainer,
-  AudioCard,
   AudioHeading,
-  MediaCategory,
-  MediaType,
+  AudioCard,
   AudioIcon,
   AudioMedia,
   AudioInfo,
   AudioTitle,
-  AudioSource
-} from '../../../../components/Library/Audio/AudioLibrary.Elements';
+  AudioSource,
+  MediaCategory,
+  MediaType
+} from './AudioLibrary.Elements';
 
 export default class GetAudio extends Component {
   constructor(props) {

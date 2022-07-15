@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import { Button } from "../../globalStyles";
+import { Button } from "../../../globalStyles";
 import { IconContext } from "react-icons/lib";
 import { FiSearch } from 'react-icons/fi';
 import { MdOndemandVideo } from "react-icons/md";
 import { BsListStars } from "react-icons/bs";
 import { GiHealthNormal } from "react-icons/gi";
 import { RiMentalHealthFill } from "react-icons/ri";
-import CustomCarousel from '../../components/Carousel/CustomCarousel/CustomCarousel';
+import CustomCarousel from '../../Carousel/CustomCarousel/CustomCarousel';
 import {
   GridNavbar,
   NavTitle,
@@ -32,7 +32,7 @@ import {
   StoryCardInformation,
   StoryCardCategory,
   StoryCardDescription,
-} from "../../components/StoriesLibrary/StoriesLibrary.Elements";
+} from '../Stories/StoriesLibrary.Elements';
 
 export default class StoriesLibrary extends Component {
   constructor(props) {
