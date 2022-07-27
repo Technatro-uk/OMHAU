@@ -1,83 +1,115 @@
-import React from 'react';
-import { Button } from '../../../globalStyles';
-import { GiCrystalBars } from 'react-icons/gi';
-import { GiCutDiamond, GiRock } from 'react-icons/gi';
-import { IconContext } from 'react-icons/lib';
+import React, { Component } from "react";
+import { FiSearch } from "react-icons/fi";
+// import { Link } from 'react-router-dom';
+import { Button } from "../../../globalStyles";
+import QuickEscapesCarousel from "./QuickEscapesCarousel";
 import {
-  QuickEscapesSection,
-  QuickEscapesWrapper,
-  QuickEscapesHeading,
-  QuickEscapesContainer,
-  QuickEscapesCard,
-  QuickEscapesCardInfo,
-  QuickEscapesCardIcon,
-  QuickEscapesCardPlan,
-  QuickEscapesCardCost,
-  QuickEscapesCardLength,
-  QuickEscapesCardFeatures,
-  QuickEscapesCardFeature
-} from '../QuickEscapes/QuickEscapes.Elements';
+  QuickEscapeWrapper,
+  GridNavbar,
+  NavTitle,
+  NavSearch,
+  NavForm,
+  NavDescription,
+  InputContainer,
+  FormInput,
+  FormBtn,
+  QuickEscapeContainer,
+  SectionHeading,
+  QuickEscapeCard,
+  QuickEscapeCardInfo,
+  QuickEscapeHeader,
+  QuickEscapeCardTitle,
+  QuickEscapeCardAuthor,
+  QuickEscapeIcon,
+  QuickEscapeCardInformation,
+  QuickEscapeCardCategory,
+  QuickEscapeCardDescription,
+} from "./QuickEscapes.Elements";
 
-const QuickEscapes = () => {
-  return (
-    <IconContext.Provider value={{ color: 'dodgerblue', size: 36 }}>
-      <QuickEscapesSection>
-        <QuickEscapesWrapper>
-          <QuickEscapesHeading>Quick Escapes</QuickEscapesHeading>
-          <QuickEscapesContainer>
-            <QuickEscapesCard to='/sign-up'>
-              <QuickEscapesCardInfo>
-                <QuickEscapesCardIcon>
-                  <GiRock />
-                </QuickEscapesCardIcon>
-                <QuickEscapesCardPlan>Starter Pack</QuickEscapesCardPlan>
-                <QuickEscapesCardCost>$99.99</QuickEscapesCardCost>
-                <QuickEscapesCardLength>per month</QuickEscapesCardLength>
-                <QuickEscapesCardFeatures>
-                  <QuickEscapesCardFeature>100 New Users</QuickEscapesCardFeature>
-                  <QuickEscapesCardFeature>$10,000 Budget</QuickEscapesCardFeature>
-                  <QuickEscapesCardFeature>Retargeting analytics</QuickEscapesCardFeature>
-                </QuickEscapesCardFeatures>
-                <Button primary>Choose Plan</Button>
-              </QuickEscapesCardInfo>
-            </QuickEscapesCard>
-            <QuickEscapesCard to='/sign-up'>
-              <QuickEscapesCardInfo>
-                <QuickEscapesCardIcon>
-                  <GiCrystalBars />
-                </QuickEscapesCardIcon>
-                <QuickEscapesCardPlan>Gold Rush</QuickEscapesCardPlan>
-                <QuickEscapesCardCost>$299.99</QuickEscapesCardCost>
-                <QuickEscapesCardLength>per month</QuickEscapesCardLength>
-                <QuickEscapesCardFeatures>
-                  <QuickEscapesCardFeature>1000 New Users</QuickEscapesCardFeature>
-                  <QuickEscapesCardFeature>$50,000 Budget</QuickEscapesCardFeature>
-                  <QuickEscapesCardFeature>Lead Gen Analytics</QuickEscapesCardFeature>
-                </QuickEscapesCardFeatures>
-                <Button primary>Choose Plan</Button>
-              </QuickEscapesCardInfo>
-            </QuickEscapesCard>
-            <QuickEscapesCard to='/sign-up'>
-              <QuickEscapesCardInfo>
-                <QuickEscapesCardIcon>
-                  <GiCutDiamond />
-                </QuickEscapesCardIcon>
-                <QuickEscapesCardPlan>Diamond Kings</QuickEscapesCardPlan>
-                <QuickEscapesCardCost>$999.99</QuickEscapesCardCost>
-                <QuickEscapesCardLength>per month</QuickEscapesCardLength>
-                <QuickEscapesCardFeatures>
-                  <QuickEscapesCardFeature>Unlimited Users</QuickEscapesCardFeature>
-                  <QuickEscapesCardFeature>Unlimited Budget</QuickEscapesCardFeature>
-                  <QuickEscapesCardFeature>24/7 Support</QuickEscapesCardFeature>
-                </QuickEscapesCardFeatures>
-                <Button primary>Choose Plan</Button>
-              </QuickEscapesCardInfo>
-            </QuickEscapesCard>
-          </QuickEscapesContainer>
-        </QuickEscapesWrapper>
-      </QuickEscapesSection>
-    </IconContext.Provider>
-  )
+export default class StoriesLibrary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      QuickEscapeLibrary: [],
+    };
+  }
+
+  getDataFromAPI() {
+    fetch("https://localhost:7021/api/QuickEscape/getallquickescapes")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ QuickEscapeLibrary: data });
+      });
+  }
+
+  componentDidMount() {
+    this.getDataFromAPI();
+  }
+
+  render() {
+    const { QuickEscapeLibrary } = this.state;
+
+    return (
+      <>
+        <GridNavbar>
+            <NavTitle>Quick Escapes</NavTitle>
+            <NavSearch>
+              <NavForm>
+                <InputContainer>
+                  <FormInput type="text" placeholder="Search Escapes.." />
+                </InputContainer>
+                <FormBtn>
+                  <FiSearch />
+                </FormBtn>
+              </NavForm>
+            </NavSearch>
+          </GridNavbar>
+          <NavDescription>
+            Need to escape and relax for a while? <br />
+            Below you will find a collection of games, puzzles, live cameras and
+            more.
+          </NavDescription>
+          {/* CAROUSEL FOR RECENTLY ADDED STORIES.. */}
+          <QuickEscapesCarousel dataSource={QuickEscapeLibrary} />
+
+          <SectionHeading>All Escapes</SectionHeading>
+          <QuickEscapeContainer>
+            {QuickEscapeLibrary.map((qeData, id) => {
+              return (
+                <QuickEscapeCard key={id}>
+                  <QuickEscapeCardInfo>
+                    <QuickEscapeHeader>
+                      <QuickEscapeCardTitle>
+                        {qeData.escapeTitle}
+                      </QuickEscapeCardTitle>
+                      <QuickEscapeCardAuthor>
+                        {qeData.escapeAuthor}
+                      </QuickEscapeCardAuthor>
+                    </QuickEscapeHeader>
+                    <QuickEscapeIcon src={qeData.escapeImage} />
+                    <QuickEscapeCardInformation>
+                      <QuickEscapeCardCategory>
+                        {qeData.escapeType}
+                      </QuickEscapeCardCategory>
+                      <QuickEscapeCardDescription>
+                        {qeData.escapeDescription}
+                      </QuickEscapeCardDescription>
+                    </QuickEscapeCardInformation>
+                    <a
+                      href={
+                        qeData.escapeSourceURL ? qeData.escapeSourceURL : ""
+                      }
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button primary>Choose escape</Button>
+                    </a>
+                  </QuickEscapeCardInfo>
+                </QuickEscapeCard>
+              );
+            })}
+          </QuickEscapeContainer>
+      </>
+    );
+  }
 }
-
-export default QuickEscapes;

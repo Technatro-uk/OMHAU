@@ -1,34 +1,42 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import { sliderSettings } from "../../../Data/Carousel/CarouselData";
-import { Row, Button, Section } from "../../../globalStyles";
+import { Row, Section } from "../../globalStyles";
 import {
   CarouselContainer,
   SectionHeading,
   ButtonContainer,
   ReviewSlider,
-  Card,
-  CardInformation,
+  CarouselCard,
   CardHeading,
-  CardDatePublished,
-  CardCategory,
+  CardImageContainer,
+  CardImage,
   CardInfo,
+  ArrowLink
 } from './CustomCarousel.Elements';
 
 const CustomCarousel = ({ dataSource }) => {
+  
+  const sliderSettings = {
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,    
+  };
+  
   const [sliderRef, setSliderRef] = useState(null);
 
   return (
     <CarouselContainer>
-      <Section margin="auto" maxWidth="100%" padding="10px 10px" inverse>
-        <Row justify="space-between" margin="0.5rem" wrap="nowrap">
+      <Section inverse>
+        <Row justify="space-between" wrap="nowrap">
           <SectionHeading>
-            Recently added
+            Resources
           </SectionHeading>
           <ButtonContainer>
             <IconContext.Provider
-              value={{ size: "1.3rem", color: "dodgerblue" }}
+              value={{ size: "1.3rem" }}
             >
               <FaArrowLeft onClick={sliderRef?.slickPrev} />
               <FaArrowRight onClick={sliderRef?.slickNext} />
@@ -39,28 +47,23 @@ const CustomCarousel = ({ dataSource }) => {
         <ReviewSlider {...sliderSettings} ref={setSliderRef}>
           {dataSource.map((ds, id) => {
             return (
-              <Card key={id}>
+              <CarouselCard key={id}>
+                      <CardImageContainer>
+                        <CardImage src={ds.image}/>
+                      </CardImageContainer>
                     <CardInfo>
-                      <CardInformation>
-                        <CardCategory>
-                          {ds.storyCategory ? ds.storyCategory : ds.escapeType}
-                        </CardCategory>
-                      </CardInformation>
                       <CardHeading>
-                        {ds.storyAuthor ? ds.storyAuthor : ds.escapeAuthor}
+                      {ds.title}
                       </CardHeading>
                       <a
-                        href={ds.storySourceURL ? ds.storySourceURL : ds.escapeSource}
+                        href={ds.linkUrl}
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button primary>{ds.storySourceURL ? "Read story" : "Choose escape"}</Button>
+                        <ArrowLink />
                       </a>
-                      <CardDatePublished>
-                        (Added {ds.datePublished ? ds.datePublished : "today"})
-                      </CardDatePublished>
                     </CardInfo>
-                  </Card>
+                  </CarouselCard>
             );
           })}
         </ReviewSlider>

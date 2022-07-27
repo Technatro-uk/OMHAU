@@ -203,9 +203,9 @@ function AddAudio() {
             </ImageUploadOptions>
           </ImageSection>
           <SubmitSection>
-            <InputLabel>Add Audio to Database</InputLabel>
+            <InputLabel>Update Audio in Database</InputLabel>
             <SubmitGroup>
-              <FormButton type='submit'>SUBMIT</FormButton>
+              <FormButton type='submit'>UPDATE</FormButton>
             </SubmitGroup>
           </SubmitSection>
         </AddAudioForm>

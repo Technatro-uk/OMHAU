@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    max-width: 100vw;
     margin-right: auto;
     margin-left: auto;
     padding-right: 50px;
@@ -84,7 +84,6 @@ export const Button = styled.button`
         width: 100%;
     }
 `;
-
 
 export const Heading = styled.h2`
 	font-size: clamp(1rem, 12vw, 2.5rem);

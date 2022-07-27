@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import { dataTitle, supportData, sliderSettings } from '../../Data/Carousel/CarouselData';
+import { dataTitle, supportData } from '../../Data/Carousel/CarouselData';
 import { Row, Heading, Section } from '../../globalStyles';
 import {
 	CarouselContainer,
@@ -19,23 +18,32 @@ import {
 } from './Carousel.Elements';
 
 const Carousel = () => {
+  
+  const sliderSettings = {
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,    
+  };
+
 	const [sliderRef, setSliderRef] = useState(null);
 
 	return (
     <CarouselContainer>
                 <Section
                   margin="auto"
-                  maxWidth="1200px"
-                  padding="30px 30px"
+                  maxWidth="1300px"
+                  padding="15px 15px"
                   inverse
                 >
-                  <Row justify="space-between" margin="1rem" wrap="nowrap">
+                  <Row justify="space-between" wrap="nowrap">
                     <Heading width="auto" inverse>
                       {dataTitle}
                     </Heading>
                     <ButtonContainer>
                       <IconContext.Provider
-                        value={{ size: "1.3rem", color: "dodgerblue" }}
+                        value={{ size: "1.3rem" }}
                       >
                         <FaArrowLeft onClick={sliderRef?.slickPrev} />
                         <FaArrowRight onClick={sliderRef?.slickNext} />
@@ -58,9 +66,9 @@ const Carousel = () => {
                           {sd.description}
                         </CardDescription>
                       </CardInformation>
-                      <Link to={sd.linkUrl}>
+                      <a href={sd.linkUrl}>
                         <CardButton primary>Contact</CardButton>
-                      </Link>
+                      </a>
                     </CardInfo>
                   </Card>
                 );

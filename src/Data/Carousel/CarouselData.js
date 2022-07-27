@@ -30,23 +30,3 @@ export const supportData = [
 		linkUrl: 'https://contactscotland-bsl.org/download/'
 	}
 ];
-
-export const sliderSettings = {
-	arrows: false,
-	slidesToShow: 3,
-	responsive: [
-		{
-			breakpoint: 1280,
-			settings: {
-				slidesToShow: 3,
-			},
-		},
-
-		{
-			breakpoint: 900,
-			settings: {
-				slidesToShow: 2,
-			},
-		},
-	],
-};

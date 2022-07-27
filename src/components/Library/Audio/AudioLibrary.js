@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { BsListStars } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
-import { GiHealthNormal } from "react-icons/gi";
-import {
-  MdOndemandVideo,
-  MdOutlinePersonOutline,
-} from "react-icons/md";
-import { RiMentalHealthFill } from "react-icons/ri";
+import { MdOutlinePersonOutline } from "react-icons/md";
+import AudioCarousel from './AudioCarousel';
 import {
   GridNavbar,
   NavTitle,
@@ -16,10 +11,7 @@ import {
   InputContainer,
   FormInput,
   FormBtn,
-  GridSortBar,
-  GridSortItem,
-  SortIcon,
-  SortName,
+  SectionHeading,
   GridContainer,
   AudioHeading,
   AudioCard,
@@ -36,7 +28,7 @@ export default class GetAudio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      audioLibrary: [],
+      AudioLibrary: [],
     };
   }
 
@@ -44,7 +36,7 @@ export default class GetAudio extends Component {
     fetch("https://localhost:7021/api/Audio/getallaudio")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ audioLibrary: data });
+        this.setState({ AudioLibrary: data });
       });
   }
 
@@ -52,21 +44,17 @@ export default class GetAudio extends Component {
     this.getDataFromAPI();
   }
 
-  componentDidUpdate() {
-    // this.getDataFromAPI();
-  }
-
   render() {
-    const { audioLibrary } = this.state;
+    const { AudioLibrary } = this.state;
 
     return (
       <>
         <GridNavbar>
-          <NavTitle>Audio Library</NavTitle>
+          <NavTitle>Audio</NavTitle>
           <NavSearch>
             <NavForm>
               <InputContainer>
-                <FormInput type="text" placeholder="Search audio.." />
+                <FormInput type="text" placeholder="Search Audio.." />
               </InputContainer>
               <FormBtn>
                 <FiSearch />
@@ -75,38 +63,16 @@ export default class GetAudio extends Component {
           </NavSearch>
         </GridNavbar>
         <NavDescription>
-          This is where you will find audio related content like Audiobooks,
-          Guides, How-To's and more.
+          This is where you will find audio related content like audiobooks,
+          how-to guides and more.
         </NavDescription>
-        <GridSortBar>
-          <GridSortItem>
-            <SortIcon>
-              <MdOndemandVideo />
-            </SortIcon>
-            <SortName>Home</SortName>
-          </GridSortItem>
-          <GridSortItem>
-            <SortIcon>
-              <BsListStars />
-            </SortIcon>
-            <SortName>Featured</SortName>
-          </GridSortItem>
-          <GridSortItem>
-            <SortIcon>
-              <GiHealthNormal />
-            </SortIcon>
-            <SortName>Health & Wellbeing</SortName>
-          </GridSortItem>
-          <GridSortItem>
-            <SortIcon>
-              <RiMentalHealthFill />
-            </SortIcon>
-            <SortName>Mental Health</SortName>
-          </GridSortItem>
-        </GridSortBar>
 
+            {/* CAROUSEL FOR RECENTLY ADDED AUDIO.. */}
+            <AudioCarousel dataSource={AudioLibrary} />
+
+        <SectionHeading>All Audio</SectionHeading>
         <GridContainer>
-          {audioLibrary.map((aData, id) => {
+          {AudioLibrary.map((aData, id) => {
             return (
               <AudioCard key={id}>
                 <AudioHeading>
@@ -120,7 +86,7 @@ export default class GetAudio extends Component {
                 <AudioInfo>
                   <AudioTitle>{aData.audioTitle}</AudioTitle>
                   <AudioSource>
-                    <MdOutlinePersonOutline size="1.3em" /> {aData.audioAuthor}
+                    {aData.audioAuthor}
                   </AudioSource>
                 </AudioInfo>
               </AudioCard>

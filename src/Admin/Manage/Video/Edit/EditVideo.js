@@ -18,7 +18,7 @@ import {
   InputDivider
 } from '../Video.Elements';
 
-function AddVideo() {
+function EditVideo() {
   const navigate = useNavigate();
 
   const [values, setValues] = useState({
@@ -96,7 +96,7 @@ function AddVideo() {
     // REPEAT THIS PROCES FOR ALL REQUIRED PAGES (Video, Escape, Podcast, Story & Video) then
     // implement GET & Update requests.
     <PageContainer>
-        <PageHeading>Add Video</PageHeading>
+        <PageHeading>Edit Video</PageHeading>
 
         <AddVideoForm onSubmit={(e) => PostFormDataToAPI(e)}>
           <VideoSection>
@@ -181,4 +181,4 @@ function AddVideo() {
   );
 }
 
-export default AddVideo;
+export default EditVideo;

@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { BsListStars } from "react-icons/bs";
-import { FiSearch } from 'react-icons/fi';
-import { GiHealthNormal } from "react-icons/gi";
-import {
-  MdOndemandVideo,
-  MdOutlinePersonOutline,
-} from "react-icons/md";
-import { RiMentalHealthFill } from "react-icons/ri";
+import { FiSearch } from "react-icons/fi";
+import { MdOutlinePersonOutline } from "react-icons/md";
+import CustomCarousel from "../../CustomCarousel/CustomCarousel";
+import VideoCarousel from "./VideoCarousel";
 import {
   GridNavbar,
   NavTitle,
@@ -16,11 +12,8 @@ import {
   InputContainer,
   FormInput,
   FormBtn,
-  GridSortBar,
-  GridSortItem,
-  SortIcon,
-  SortName,
   GridContainer,
+  SectionHeading,
   VideoCard,
   VideoMedia,
   CardInfo,
@@ -48,17 +41,13 @@ export default class GetVideo extends Component {
     this.getDataFromAPI();
   }
 
-  componentDidUpdate() {
-    // this.getDataFromAPI();
-  }
-
   render() {
     const { VideoLibrary } = this.state;
 
     return (
       <>
         <GridNavbar>
-          <NavTitle>Video Library</NavTitle>
+          <NavTitle>Videos</NavTitle>
           <NavSearch>
             <NavForm>
               <InputContainer>
@@ -71,35 +60,13 @@ export default class GetVideo extends Component {
           </NavSearch>
         </GridNavbar>
         <NavDescription>
-        This is where you will find video related content like Tutorials, Guides, Stories and more.
+          Below you will find how-to guides, educational videos, personal experiences and more.
         </NavDescription>
-        <GridSortBar>
-          <GridSortItem>
-            <SortIcon>
-              <MdOndemandVideo />
-            </SortIcon>
-            <SortName>Home</SortName>
-          </GridSortItem>
-          <GridSortItem>
-            <SortIcon>
-              <BsListStars />
-            </SortIcon>
-            <SortName>Featured</SortName>
-          </GridSortItem>
-          <GridSortItem>
-            <SortIcon>
-              <GiHealthNormal />
-            </SortIcon>
-            <SortName>Health & Wellbeing</SortName>
-          </GridSortItem>
-          <GridSortItem>
-            <SortIcon>
-              <RiMentalHealthFill />
-            </SortIcon>
-            <SortName>Mental Health</SortName>
-          </GridSortItem>
-        </GridSortBar>
+          
+          {/* CAROUSEL FOR RECENTLY ADDED VIDEOS.. */}
+          <VideoCarousel dataSource={VideoLibrary} />
 
+        <SectionHeading>All Videos</SectionHeading>
         <GridContainer>
           {VideoLibrary.map((vData, id) => {
             return (
@@ -108,7 +75,7 @@ export default class GetVideo extends Component {
                 <CardInfo>
                   <CardTitle>{vData.videoTitle}</CardTitle>
                   <CardSource>
-                    <MdOutlinePersonOutline size="1.3em" /> {vData.videoAuthor}
+                    {vData.videoAuthor}
                   </CardSource>
                 </CardInfo>
               </VideoCard>

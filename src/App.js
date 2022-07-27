@@ -16,19 +16,22 @@ import Audio from './pages/Audio/Audio';
 import Stories from './pages/Stories/Stories';
 
 // Admin Imports
+// Dashboard
+import Dashboard from './Admin/Dashboard/Dashboard';
+
 // Audio
 import AddAudio from './Admin/Manage/Audio/Add/AddAudio';
-import GetAudio from './Admin/Manage/Audio/Get/GetAudio';
+import EditAudio from './Admin/Manage/Audio/Edit/EditAudio';
 // Video
 import AddVideo from './Admin/Manage/Video/Add/AddVideo';
-import GetVideo from './Admin/Manage/Video/Get/GetVideo';
+import EditVideo from './Admin/Manage/Video/Edit/EditVideo';
 // Stories
 import AddStories from './Admin/Manage/Stories/Add/AddStory';
-import GetStories from './Admin/Manage/Stories/Get/GetStory';
+import EditStories from './Admin/Manage/Stories/Edit/EditStory';
 
 // Quick Escapes
-import AddQuickEscape from './Admin/Manage/QuickEscape/Add/AddEscape';
-import GetQuickEscape from './Admin/Manage/QuickEscape/Get/GetQuickEscape';
+import AddEscape from './Admin/Manage/QuickEscape/Add/AddEscape';
+import EditEscape from './Admin/Manage/QuickEscape/Edit/EditEscape';
 
 function App() {
   return (
@@ -41,26 +44,29 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/resources' element={<Resources />} />
 
+        {/* Admin Dashboard */}
+        <Route path='/admin/home' element={<Dashboard />} />
+
         {/* Audio Routes */}
         {/* Public */}
         <Route path='/audio' element={<Audio />} />
         {/* Admin */}
-        <Route path='/addaudio' element={<AddAudio />} />
-        <Route path='/getaudio' element={<GetAudio />} />
+        <Route path='/audio/add' element={<AddAudio />} />
+        <Route path='/audio/edit' element={<EditAudio />} />
         
         {/* Video Routes */}
         {/* Public */}
         <Route path='/video' element={<Video />} />
         {/* Admin */}
-        <Route path='/addvideo' element={<AddVideo />} />
-        <Route path='/getvideo' element={<GetVideo />} />
+        <Route path='/video/add' element={<AddVideo />} />
+        <Route path='/video/edit' element={<EditVideo />} />
         
         {/* Story Routes */}
         {/* Public */}
         <Route path='/stories' element={<Stories />} />
         {/* Admin */}
-        <Route path='/story/add' element={<AddStories />} />
-        <Route path='/story/get' element={<GetStories />} />
+        <Route path='/stories/add' element={<AddStories />} />
+        <Route path='/stories/edit' element={<EditStories />} />
         
         {/* Book Routes */}
         {/* Public */}
@@ -73,8 +79,8 @@ function App() {
         
         <Route path='/quickescapes' element={<QuickEscapes />} />
         {/* Admin */}
-        <Route path='/quickescapes/add' element={<AddQuickEscape />} />
-        <Route path='/quickescapes/get' element={<GetQuickEscape />} />
+        <Route path='/quickescapes/add' element={<AddEscape />} />
+        <Route path='/quickescapes/edit' element={<EditEscape />} />
         
       </Routes>
     </Router>

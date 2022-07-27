@@ -1,8 +1,6 @@
 import React from 'react';
-import { BsJournalText } from 'react-icons/bs';
-import { MdOndemandVideo, MdGroups, MdFitnessCenter } from 'react-icons/md';
-import { FaRegFileAudio,FaPodcast, FaHandsHelping } from 'react-icons/fa';
-import { RiCommunityLine } from 'react-icons/ri';
+import { MdOndemandVideo } from 'react-icons/md';
+import { FaRegFileAudio,FaPodcast } from 'react-icons/fa';
 const iconStyle = (Icon) => <Icon size="1.7rem" color="dodgerblue" />;
 
 export const featuresData = [

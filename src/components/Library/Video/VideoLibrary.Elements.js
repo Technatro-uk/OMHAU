@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const GridNavbar = styled.nav`
     width: 100%;
-    min-height: 80px;
-    border-bottom: 1px solid #eeeeee;
+    min-height: 60px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -28,23 +27,6 @@ export const NavTitle = styled.h1`
     }
 `;
 
-export const NavDescription = styled.p`
-    margin: 12px;
-    color: #333;
-    text-align: center;
-    font-size: 22px;
-    padding: 0.5rem;
-
-    @media screen and (max-width: 940px){
-        font-size: 18px;
-    }
-
-    @media screen and (max-width: 640px){
-        font-size: 14px;
-    }
-`;
-
-
 export const NavSearch = styled.div`
     justify-self: center;
     width: 100%;
@@ -66,9 +48,10 @@ export const NavForm = styled.form`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 8px 12px;
+    margin-top: 12px;
+    padding: 6px 12px;
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, dodgerblue 0px 0px 0px 3px;
 
     @media screen and (max-width: 940px){
         max-width: 750px;
@@ -102,54 +85,30 @@ export const FormBtn = styled.button`
     cursor: pointer;
 `;
 
-export const GridSortBar = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0.5rem;
+export const NavDescription = styled.p`
+    margin: 12px;
+    color: #333;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee;
-    color: #5E5E5E;
-    text-align: center;
-    margin: 0.5rem 3rem;
+
+    @media screen and (max-width: 940px){
+        font-size: 18px;
+    }
 
     @media screen and (max-width: 640px){
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        border: 1px solid #eeeeee;
+        font-size: 14px;
     }
-`;
-
-export const GridSortItem = styled.div`
-    &:hover {
-        cursor: pointer;
-        color: dodgerblue;
-    }
-`;
-
-export const SortIcon = styled.div`
-    font-size: 2rem;
-
-    &:hover {
-        color: dodgerblue;
-    }
-
-`;
-
-export const SortName = styled.p`
-    font-size: 14px;
 `;
 
 export const GridContainer = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding: 1.5rem;
-
-    @media screen and (max-width: 940px){
-        grid-template-columns: repeat(3, 1fr);
-    }
 
     @media screen and (max-width: 640px){
         grid-template-columns: repeat(2, 1fr);
@@ -160,12 +119,18 @@ export const GridContainer = styled.div`
     }
 `;
 
+export const SectionHeading = styled.h4`
+  font-size: 26px;
+  color: #333;
+  margin-left: 1.2rem;
+`;
+
 export const VideoCard = styled.div`
-    max-width: 280px;
     width: 100%;
     margin: 0 auto;
     padding: 0.5rem;
-    border-radius: 8px;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     @media screen and (max-width: 940px){
         margin: 0 auto;
@@ -184,24 +149,23 @@ export const VideoCard = styled.div`
 
 export const VideoMedia = styled.iframe`
     width: 100%;
-    height: 180px;
+    height: 200px;
     outline: none;
     border: none;
-    border-radius: 15px;
 `;
 
 export const CardInfo = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 `;
 
 export const CardTitle = styled.h4`
-    padding-top: 4px;
     font-size: 11px;
 `;
 
 export const CardSource = styled.p`
-    padding-top: 4px;
     font-size: 11px;
     color: #333;
 `;

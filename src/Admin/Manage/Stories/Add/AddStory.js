@@ -13,7 +13,7 @@ import {
   FormButton,
   SubmitSection,
   StoryContentField,
-} from './AddStory.Elements';
+} from '../Story.Elements';
 
 function AddStory() {
   const navigate = useNavigate();

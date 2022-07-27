@@ -19,6 +19,7 @@ export const CarouselContainer = styled.div`
 
 export const ButtonContainer = styled(Row)`
 	& svg {
+		opacity: 0.5;
 		margin: 1rem;
 		cursor: pointer;
 	}
@@ -26,8 +27,6 @@ export const ButtonContainer = styled(Row)`
 	& svg:hover {
 		opacity: 1;
 		transition: opacity 0.3s ease-in-out;
-        background: lightskyblue;
-		border-radius: 50%;
 	}
 
 	@media screen and (max-width: 960px) {
@@ -112,19 +111,18 @@ export const CardWordCount = styled.p`
 export const CarouselImage = styled.img`
 	width: 100%;
 	height: 100px;
-	border-radius: 8px 8px 3px 3px;
 	object-fit: cover;
-	vertical-align: middle;	
+	vertical-align: middle;
 `;
 
-export const CardInformation = styled.ul`
-  margin: 16px 0 12px;
+export const CardInformation = styled.div`
+  margin: 16px 12px;
   list-style: none;
   font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #a9b3c1;
+  color: #010606;
 `;
 
 export const CardCategory = styled.li`
@@ -132,9 +130,10 @@ export const CardCategory = styled.li`
 `;
 
 export const CardDescription = styled.li`
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-align: center;
 `;
 
 export const CardButton = styled(Button)`
-	margin-top: 3.5rem;
+	margin-top: 2.5rem;
 `;

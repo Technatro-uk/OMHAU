@@ -1,0 +1,42 @@
+export const ActiveUsers = [
+    {
+		id: '1',
+		firstName: 'Lani',
+		lastName: 'Ovendale',
+		username: 'l_ovendale_01',
+		email: 'lovendale0@w3.org',
+		country: 'United Kingdom',
+		university: 'University of Plymouth',
+		userPhoto: 'https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7--v1.png',
+	},
+    {
+        id: '2',
+		firstName: 'Israel',
+		lastName: 'Tassell',
+		username: 'itassel01',
+		email: 'itassell1@ow.ly',
+		country: 'Macedonia',
+		university: 'South East European University',
+		userPhoto: 'https://img.icons8.com/color/48/000000/circled-user-male-skin-type-7--v1.png',
+    },
+    {
+        id: '3',
+		firstName: 'Eveleen',
+		lastName: 'Mercer',
+		username: 'emercer_20',
+		email: 'emercer2@ow.ly',
+		country: 'Portugal',
+		university: 'Instituto Superior Novas Profissões - INP',
+		userPhoto: 'https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7--v1.png',
+    },
+    {
+        id: '4',
+		firstName: 'Conn',
+		lastName: 'Whitley',
+		username: 'cwhitley_user',
+		email: 'cwhitley3@wsj.com',
+		country: 'Albania',
+		university: 'Epoka University',
+		userPhoto: 'https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7--v1.png',
+    }
+];
