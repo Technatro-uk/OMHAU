@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { IoIosAddCircleOutline } from 'react-icons/io';
+import { BiEditAlt } from 'react-icons/bi';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 export const GridNavbar = styled.nav`
     width: 100%;
@@ -103,18 +106,33 @@ export const NavDescription = styled.p`
     }
 `;
 
+export const TitleOptions = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7a83a;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.36) 0px 1px 4px;
+
+
+    @media screen and (max-width: 940px){
+        display: flex;
+        justify-content: space-between;
+    }
+`;
+
 export const SectionHeading = styled.h4`
   font-size: 26px;
-  color: #333;
-  margin-left: 1.2rem;
+  color: #fff;
+  margin-left: 1.5rem;
 `;
 
 export const GridContainer = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-    padding: 1.2rem;
+    gap: 0.6rem;
+    padding: 0.4rem;
 
     @media screen and (max-width: 940px){
         grid-template-columns: repeat(3, 1fr);
@@ -130,11 +148,11 @@ export const GridContainer = styled.div`
 `;
 
 export const AudioCard = styled.div`
-    max-width: 320px;
+    max-width: 300px;
     width: 100%;
     margin: 0 auto;
-    padding: 0.5rem;
-    border-radius: 3px;
+    padding: 0.3rem;
+    border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     @media screen and (max-width: 940px){
@@ -155,7 +173,7 @@ export const AudioCard = styled.div`
 export const AudioHeading = styled.div`
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
 `;
 
 export const MediaCategory = styled.p`
@@ -173,7 +191,7 @@ export const MediaType = styled.p`
 `;
 
 export const AudioIcon = styled.img`
-    height: 130px;
+    height: 150px;
     width: 100%;
     text-align: center;
 	padding: 0.2rem;
@@ -182,27 +200,65 @@ export const AudioIcon = styled.img`
 
 export const AudioMedia = styled.audio`
     width: 100%;
-    height: 30px;
+    height: 35px;
     justify-content: center;
+    margin-top: 0.4rem;
 `;
 
 export const AudioInfo = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`;
-
-export const MediaInfo = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0.5rem;
 `;
 
 export const AudioTitle = styled.h4`
-    font-size: 11px;
+    font-size: 12px;
     flex: 1;
 `;
 
 export const AudioSource = styled.p`
-    font-size: 11px;
+    font-size: 12px;
     color: #333;
+`;
+
+export const AdminOptions = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+`;
+
+export const AdminAddIcon = styled(IoIosAddCircleOutline)`
+    padding: 3px;
+
+    &:hover {
+        border-radius: 50%;
+        border: 2px solid dodgerblue;
+    }
+
+`;
+
+export const AdminEditIcon = styled(BiEditAlt)`
+    padding: 3px;
+
+    &:hover {
+        cursor: pointer;
+        border-radius: 20%;
+        border: 2px solid dodgerblue;
+        background-color: #7ca1f9;
+        transform: scale(1.15);
+    }
+`;
+
+export const AdminDeleteIcon = styled(TiDeleteOutline)`
+    padding: 3px;
+
+    &:hover {
+        cursor: pointer;
+        border-radius: 20%;
+        border: 2px solid crimson;
+        background-color: #f97c94;
+        transform: scale(1.15);
+    }
 `;

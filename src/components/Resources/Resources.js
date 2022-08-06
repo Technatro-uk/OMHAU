@@ -8,8 +8,8 @@ import {
 	ResourceImageWrapper,
 	ResourceName,
 	ResourceTextWrapper,
-} from './Resources.Elements';
-import { featuresData } from './Data';
+} from '../styles/Resources.Elements';
+import { featuresData } from '../../Data/Resources/ResourcesData';
 
 const Resources = () => {
 

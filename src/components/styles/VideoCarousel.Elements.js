@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Row } from '../../../globalStyles';
+import { Row } from '../../globalStyles';
 import Slider from 'react-slick';
 
 export const CarouselContainer = styled.div`

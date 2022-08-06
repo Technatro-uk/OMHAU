@@ -1,6 +1,4 @@
-// replace data in this file with free resources found online
-
-export const homeData = [
+export const AdminLinks = [
 	{
 		title: 'Audio',
 		image: 'https://img.icons8.com/color/96/000000/audio-wave--v1.png',

@@ -1,22 +1,26 @@
 import React, { useState } from "react";
+import { Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Row } from "../../globalStyles";
 import { IconContext } from "react-icons";
-import { Row, Section } from "../../globalStyles";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
-  CarouselContainer,
-  SectionHeading,
+  AccordionContainer,
   ButtonContainer,
+  TitleOptions,
+  SectionHeading,
+} from "../styles/CustomTable.Elements";
+import {
   ReviewSlider,
-  Card,
-  CardInformation,
-  // CardHeading,
+  CarouselCard,
+  CardHeading,
+  CardImageContainer,
   CardImage,
-  CardButton,
   CardInfo,
-} from "./AdminCarousel.Elements";
+  ArrowLink,
+} from "../styles/AdminCarousel.Elements";
 
-const CustomCarousel = ({ dataSource }) => {
+const AdminCarousel = ({ dataSource }) => {
   const sliderSettings = {
     arrows: false,
     infinite: true,
@@ -28,41 +32,48 @@ const CustomCarousel = ({ dataSource }) => {
   const [sliderRef, setSliderRef] = useState(null);
 
   return (
-    <CarouselContainer>
-      <Section inverse>
-        <Row justify="space-between" wrap="nowrap">
-          <SectionHeading>Quick Links</SectionHeading>
-          <ButtonContainer>
-            <IconContext.Provider
-              value={{ size: "1.3rem", color: "dodgerblue" }}
-            >
-              <FaArrowLeft onClick={sliderRef?.slickPrev} />
-              <FaArrowRight onClick={sliderRef?.slickNext} />
-            </IconContext.Provider>
-          </ButtonContainer>
-        </Row>
+    <AccordionContainer>
+      <Accordion defaultActiveKey="0">
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>
+            <TitleOptions>
+              <SectionHeading>Quick Links</SectionHeading>
+            </TitleOptions>
+          </Accordion.Header>
+          <Accordion.Body>
+            <Row justify="space-between" wrap="nowrap">
+              <ButtonContainer>
+                <IconContext.Provider
+                  value={{ size: "1.3rem", color: "dodgerblue" }}
+                >
+                  <FaArrowLeft onClick={sliderRef?.slickPrev} />
+                  <FaArrowRight onClick={sliderRef?.slickNext} />
+                </IconContext.Provider>
+              </ButtonContainer>
+            </Row>
 
-        <ReviewSlider {...sliderSettings} ref={setSliderRef}>
-          {dataSource.map((ds, id) => {
-            return (
-              <Card key={id}>
-                <CardInfo>
-                  <CardInformation>
-                    <CardImage src={ds.image} />
-                  </CardInformation>
-                  <Link to={ds.linkUrl}>
-                    <CardButton>
-                    {ds.title}
-                    </CardButton>
-                  </Link>
-                </CardInfo>
-              </Card>
-            );
-          })}
-        </ReviewSlider>
-      </Section>
-    </CarouselContainer>
+            <ReviewSlider {...sliderSettings} ref={setSliderRef}>
+              {dataSource.map((ds, id) => {
+                return (
+                  <CarouselCard key={id}>
+                    <CardImageContainer>
+                      <CardImage src={ds.image} />
+                    </CardImageContainer>
+                    <CardInfo>
+                      <CardHeading>{ds.title}</CardHeading>
+                      <Link to={ds.linkUrl} target="_blank" rel="noreferrer">
+                        <ArrowLink />
+                      </Link>
+                    </CardInfo>
+                  </CarouselCard>
+                );
+              })}
+            </ReviewSlider>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </AccordionContainer>
   );
 };
 
-export default CustomCarousel;
+export default AdminCarousel;

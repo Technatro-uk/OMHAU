@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { IconContext } from "react-icons";
 import { Row, Button, Section } from "../../../globalStyles";
+import { IconContext } from "react-icons";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
   CarouselContainer,
   SectionHeading,
@@ -13,31 +13,26 @@ import {
   CardDatePublished,
   CardCategory,
   CardInfo,
-} from './VideoCarousel.Elements';
+} from "../../styles/VideoCarousel.Elements";
 
 const VideoCarousel = ({ dataSource }) => {
-  
   const sliderSettings = {
     arrows: false,
     infinite: true,
     speed: 300,
     slidesToShow: 4,
-    slidesToScroll: 4,    
+    slidesToScroll: 4,
   };
-  
+
   const [sliderRef, setSliderRef] = useState(null);
 
   return (
     <CarouselContainer>
       <Section inverse>
         <Row justify="space-between" wrap="nowrap">
-          <SectionHeading>
-            Recently Added
-          </SectionHeading>
+          <SectionHeading>Recently Added</SectionHeading>
           <ButtonContainer>
-            <IconContext.Provider
-              value={{ size: "1.3rem" }}
-            >
+            <IconContext.Provider value={{ size: "1.3rem" }}>
               <FaArrowLeft onClick={sliderRef?.slickPrev} />
               <FaArrowRight onClick={sliderRef?.slickNext} />
             </IconContext.Provider>
@@ -48,27 +43,19 @@ const VideoCarousel = ({ dataSource }) => {
           {dataSource.map((ds, id) => {
             return (
               <CarouselCard key={id}>
-                    <CardInfo>
-                        <CardCategory>
-                          {ds.videoCategory}
-                        </CardCategory>
-                      <CardHeading>
-                      {ds.videoAuthor}
-                      </CardHeading>
-                      <CardInformation>
-                      <CardDatePublished>
-                        (Added {ds.mediaAdded})
-                      </CardDatePublished>
-                      </CardInformation>
-                      <a
-                        href={ds.videoSource}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Button primary>Watch</Button>
-                      </a>
-                    </CardInfo>
-                  </CarouselCard>
+                <CardInfo>
+                  <CardCategory>{ds.videoCategory}</CardCategory>
+                  <CardHeading>{ds.videoAuthor}</CardHeading>
+                  <CardInformation>
+                    <CardDatePublished>
+                      (Added {ds.mediaAdded})
+                    </CardDatePublished>
+                  </CardInformation>
+                  <a href={ds.videoSource} target="_blank" rel="noreferrer">
+                    <Button primary>Watch</Button>
+                  </a>
+                </CardInfo>
+              </CarouselCard>
             );
           })}
         </ReviewSlider>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { BsListStars } from "react-icons/bs";
+// import { BsListStars } from "react-icons/bs";
 
 export const HealthContainer = styled.div`
     height: 500px;

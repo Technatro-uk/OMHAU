@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { FiSearch } from "react-icons/fi";
-import { MdOutlinePersonOutline } from "react-icons/md";
-import AudioCarousel from './AudioCarousel';
+import AudioCarousel from "./AudioCarousel";
 import {
   GridNavbar,
   NavTitle,
@@ -21,8 +20,8 @@ import {
   AudioTitle,
   AudioSource,
   MediaCategory,
-  MediaType
-} from './AudioLibrary.Elements';
+  MediaType,
+} from "../../styles/AudioLibrary.Elements";
 
 export default class GetAudio extends Component {
   constructor(props) {
@@ -67,8 +66,8 @@ export default class GetAudio extends Component {
           how-to guides and more.
         </NavDescription>
 
-            {/* CAROUSEL FOR RECENTLY ADDED AUDIO.. */}
-            <AudioCarousel dataSource={AudioLibrary} />
+        {/* CAROUSEL FOR RECENTLY ADDED AUDIO.. */}
+        <AudioCarousel dataSource={AudioLibrary} />
 
         <SectionHeading>All Audio</SectionHeading>
         <GridContainer>
@@ -80,15 +79,11 @@ export default class GetAudio extends Component {
                   <MediaType>{aData.audioType}</MediaType>
                 </AudioHeading>
                 <AudioIcon src={aData.audioImage} />
-
-                <AudioMedia src={aData.audioURL} controls={true} />
-
                 <AudioInfo>
                   <AudioTitle>{aData.audioTitle}</AudioTitle>
-                  <AudioSource>
-                    {aData.audioAuthor}
-                  </AudioSource>
+                  <AudioSource>{aData.audioAuthor}</AudioSource>
                 </AudioInfo>
+                <AudioMedia src={aData.audioURL} controls={true} />
               </AudioCard>
             );
           })}

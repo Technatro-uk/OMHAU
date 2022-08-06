@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { FiSearch } from "react-icons/fi";
-import { MdOutlinePersonOutline } from "react-icons/md";
-import CustomCarousel from "../../CustomCarousel/CustomCarousel";
 import VideoCarousel from "./VideoCarousel";
 import {
   GridNavbar,
@@ -19,7 +17,7 @@ import {
   CardInfo,
   CardTitle,
   CardSource,
-} from "./VideoLibrary.Elements";
+} from "../../styles/VideoLibrary.Elements";
 
 export default class GetVideo extends Component {
   constructor(props) {
@@ -60,11 +58,12 @@ export default class GetVideo extends Component {
           </NavSearch>
         </GridNavbar>
         <NavDescription>
-          Below you will find how-to guides, educational videos, personal experiences and more.
+          Below you will find how-to guides, educational videos, personal
+          experiences and more.
         </NavDescription>
-          
-          {/* CAROUSEL FOR RECENTLY ADDED VIDEOS.. */}
-          <VideoCarousel dataSource={VideoLibrary} />
+
+        {/* CAROUSEL FOR RECENTLY ADDED VIDEOS.. */}
+        <VideoCarousel dataSource={VideoLibrary} />
 
         <SectionHeading>All Videos</SectionHeading>
         <GridContainer>
@@ -74,9 +73,7 @@ export default class GetVideo extends Component {
                 <VideoMedia src={vData.videoSource} controls={true} />
                 <CardInfo>
                   <CardTitle>{vData.videoTitle}</CardTitle>
-                  <CardSource>
-                    {vData.videoAuthor}
-                  </CardSource>
+                  <CardSource>{vData.videoAuthor}</CardSource>
                 </CardInfo>
               </VideoCard>
             );

@@ -1,31 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Button } from '../../globalStyles';
-import { 
-  InfoSec, 
-  InfoRow, 
-  InfoColumn, 
-  TextWrapper, 
-  TopLine, 
-  Heading, 
-  Subtitle, 
-  ImgWrapper, 
-  Img } from './InfoSection.Elements';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Button } from "../../globalStyles";
+import {
+  InfoSec,
+  InfoRow,
+  InfoColumn,
+  TextWrapper,
+  TopLine,
+  Heading,
+  Subtitle,
+  ImgWrapper,
+  Img,
+} from "../styles/InfoSection.Elements";
 
-const InfoSection = ({ 
-  primary, 
-  lightBg, 
-  imgStart, 
-  lightTopLine, 
-  lightTextDesc, 
-  buttonLabel, 
-  description, 
-  headline, 
-  lightText, 
+const InfoSection = ({
+  primary,
+  lightBg,
+  imgStart,
+  lightTopLine,
+  lightTextDesc,
+  buttonLabel,
+  description,
+  headline,
+  lightText,
   topLine,
-  img, 
-  alt, 
-  start }) => {
+  img,
+  alt,
+  start,
+}) => {
   return (
     <>
       <InfoSec lightBg={lightBg}>
@@ -34,13 +36,13 @@ const InfoSection = ({
             <InfoColumn>
               <TextWrapper>
                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
-                  <Heading lightText={lightText}>{headline}</Heading>
-                    <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                      <Link to='/resources'>
-                        <Button big fontBig primary={primary}>
-                          {buttonLabel}
-                        </Button>
-                      </Link>
+                <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
+                <Link to="/resources">
+                  <Button big fontBig primary={primary}>
+                    {buttonLabel}
+                  </Button>
+                </Link>
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
@@ -52,7 +54,7 @@ const InfoSection = ({
         </Container>
       </InfoSec>
     </>
-  )
-}
+  );
+};
 
 export default InfoSection;

@@ -1,24 +1,39 @@
-import React from "react";
+import React, { Component } from 'react'
 import AdminCarousel from "../AdminCarousel/AdminCarousel";
-import { AdminLinks } from "./Data";
-import { PageContainer, PageHeading } from "./Dashboard.Elements";
-// import CustomTable from "../CustomTable/CustomTable";
+import { AdminLinks } from "../Data/DashboardData";
+import { PageContainer, PageHeading } from "../styles/Dashboard.Elements";
 import UserTable from "../CustomTable/UserTable";
 import CategoryTable from "../CustomTable/CategoryTable";
+import QuickEscapeTable from "../CustomTable/QuickEscapeTable";
+import AudioTable from "../CustomTable/AudioTable";
+import VideoTable from "../CustomTable/VideoTable";
+import StoriesTable from "../CustomTable/StoriesTable";
 
-function Dashboard() {
-  return (
-    <PageContainer>
+export default class Dashboard extends Component {
+  render() {
+    return (
+      <PageContainer>
       <PageHeading>Admin Dashboard</PageHeading>
       <AdminCarousel dataSource={AdminLinks} />
 
-      <PageHeading>Active Users</PageHeading>
-      <UserTable />
+      {/* ALL AUDIO - TABLE */}
+      <AudioTable />
 
-      <PageHeading>Pages / Categories</PageHeading>
+      {/* ALL QUICK ESCAPES - TABLE */}
+      <QuickEscapeTable />
+
+      {/* ALL STORIES - TABLE */}
+      <StoriesTable />
+
+      {/* ALL VIDEOS - TABLE */}
+      <VideoTable />
+      
+      {/* ALL USERS - TABLE */}
+      <UserTable />
+      
+      {/* ALL CATEGORIES - TABLE */}
       <CategoryTable />
     </PageContainer>
-  );
+    )
+  }
 }
-
-export default Dashboard;

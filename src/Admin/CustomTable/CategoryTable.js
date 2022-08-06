@@ -1,22 +1,31 @@
 import React, { Component } from "react";
+import { Accordion } from "react-bootstrap";
+// import { ButtonContainer } from "../styles/AdminCarousel.Elements";
 import { Link } from "react-router-dom";
-import { FaEdit } from 'react-icons/fa';
-import { MdDeleteForever } from 'react-icons/md';
+// import { FaEdit } from 'react-icons/fa';
+// import { MdDeleteForever } from 'react-icons/md';
 import {
+  AccordionContainer,
+  TitleOptions,
+  SectionHeading,
+  // AdminAddIcon,
+  AdminEditIcon,
+  AdminDeleteIcon,
+  // AddToTableContainer,
   CustomisedTable,
   TableHeader,
   TableBody,
   TableRow,
   TH,
   TD,
-  RowImage
-} from "./CustomTable.Elements";
+  RowImage,
+} from "../styles/CustomTable.Elements";
 
 export default class CategoryTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: [],
+      Categories: [],
     };
   }
 
@@ -24,7 +33,7 @@ export default class CategoryTable extends Component {
     fetch("https://localhost:7021/api/Category/getallcategories")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ categories: data });
+        this.setState({ Categories: data });
       });
   }
 
@@ -37,51 +46,85 @@ export default class CategoryTable extends Component {
   }
 
   render() {
-    const { categories } = this.state;
+    const { Categories } = this.state;
 
-  return (
-    <>
-      <CustomisedTable>
-        <TableHeader>
-          <TableRow>
-            <TH>ID</TH>
-            <TH>Icon</TH>
-            <TH>Category Name</TH>
-            <TH>Page URL</TH>
-            <TH>Description</TH>
-            <TH># of Entries</TH>
-            <TH>Last Modified</TH>
-            <TH>Options</TH>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {categories.map((data, index) => {
-            return (
-              <TableRow key={index}>
-                <TD>{data.id}</TD>
-                <RowImage src={data.icon} />
-                <TD>{data.categoryName}</TD>
-                <TD>
-                  <Link to={data.pageURL}>{data.pageURL}</Link>
-                </TD>
-                <TD>{data.description}</TD>
-                <TD>{data.numberOfEntries}</TD>
-                <TD>{data.lastModified}</TD>
-                <TD>
-                  <Link to={{ pathname: `/category/edit/${data.id}` }}>
-                    <FaEdit size={17.5}/>
-                  </Link>
-                  |
-                  <Link to={{ pathname: `/category/delete/${data.id}` }}>
-                    <MdDeleteForever size={17.5}/>
-                  </Link>
-                </TD>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </CustomisedTable>
-    </>
-  );
-}
+    return (
+      <>
+        <AccordionContainer>
+          <Accordion>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <TitleOptions>
+                  <SectionHeading>Categories</SectionHeading>
+                </TitleOptions>
+              </Accordion.Header>
+              <Accordion.Body>
+                <CustomisedTable>
+                  <TableHeader>
+                    <TableRow>
+                      <TH>ID</TH>
+                      <TH>Icon</TH>
+                      <TH>Category Name</TH>
+                      <TH>Page URL</TH>
+                      <TH>Description</TH>
+                      <TH># of Entries</TH>
+                      <TH>Last Modified</TH>
+                      <TH>Options</TH>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {Categories.map((data, index) => {
+                      return (
+                        <TableRow key={index}>
+                          <TD>{data.id}</TD>
+                          <RowImage src={data.icon} />
+                          <TD>{data.categoryName}</TD>
+                          <TD>
+                            <Link to={data.pageURL}>{data.pageURL}</Link>
+                          </TD>
+                          <TD>{data.description}</TD>
+                          <TD>{data.numberOfEntries}</TD>
+                          <TD>{data.lastModified}</TD>
+                          <TD>
+                            <AdminEditIcon
+                              size={25}
+                              style={{ color: "dodgerblue" }}
+                              // onClick={() =>
+                              //   this.setState({
+                              //     editAudioModal: true,
+                              //     audioid: aData.id,
+                              //     audiotitle: aData.audioTitle,
+                              //     audioimage: aData.audioImage,
+                              //     audioauthor: aData.audioAuthor,
+                              //     audiocategory: aData.audioCategory,
+                              //     audiotype: aData.audioType,
+                              //     audiodateadded: aData.mediaAdded,
+                              //     audiourl: aData.audioURL,
+                              //   })
+                              // }
+                            />
+                            <AdminDeleteIcon
+                              size={25}
+                              style={{ color: "red" }}
+                              // onClick={() =>
+                              //   this.deleteFromLibrary(
+                              //     aData.id,
+                              //     aData.audioTitle,
+                              //     aData.audioAuthor
+                              //   )
+                              // }
+                            />
+                          </TD>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </CustomisedTable>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </AccordionContainer>
+      </>
+    );
+  }
 }
