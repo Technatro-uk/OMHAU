@@ -4,17 +4,17 @@ import Slider from 'react-slick';
 
 export const CarouselContainer = styled.div`
 	width: 100%;
-	background: #FFF;
-	max-width: 1300px;
-	margin-right: auto;
-	margin-left: auto;
-	padding: 20px;
 	height: 100vh;
 
 	@media screen and (max-width: 768px) {
-		padding: 30px;
+    height: 80vh;
 	}
 
+`;
+
+export const SectionHeading = styled.h4`
+  font-size: 1.6rem;
+  color: #333;
 `;
 
 export const ButtonContainer = styled(Row)`
@@ -30,21 +30,22 @@ export const ButtonContainer = styled(Row)`
 	}
 
 	@media screen and (max-width: 960px) {
-		margin: 0 auto;
+		text-align: center;
 	}
 `;
 
+export const SliderContainer = styled.div`
+`;
+
 export const ReviewSlider = styled(Slider)`
-	width: 100%;
 
 	.slick-track {
-		display: flex;
-		padding: 20px;
-		gap: 2rem;
+    display: block;
+		padding: 1rem;
+		gap: 1rem;
 	}
 
 	.slick-slide {
-		display: flex;
 		justify-content: center;
 		margin-bottom: 1;
 		outline: none;
@@ -55,23 +56,13 @@ export const ReviewSlider = styled(Slider)`
 	}
 `;
 
-export const CardInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  padding: 24px;
-  justify-content: center;
-  align-items: center;
-  color: #333;
-`;
-
 export const Card = styled.div`
   background: #fff;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
-  width: 350px;
-  height: 350px;
+  box-shadow: dodgerblue 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  // width: 350px;
+  height: 100%;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
 
   &:hover {
     transform: scale(1.03);
@@ -88,37 +79,33 @@ export const Card = styled.div`
   }
 `;
 
-export const CardTitle = styled.h3`
-  margin-bottom: 15px;
-  font-size: 16px;
-`;
-
-export const CardAuthor = styled.h4`
-  font-size: 14px;
+export const CardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  padding: 0.4rem;
+  justify-content: center;
+  align-items: center;
   color: #333;
 `;
 
-export const CardDatePublished = styled.p`
-  font-size: 14px;
-  margin-bottom: 14px;
-`;
-
-export const CardWordCount = styled.p`
-  font-size: 14px;
-  margin-bottom: 14px;
+export const CardTitle = styled.h3`
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  border-bottom: 3px solid dodgerblue;
 `;
 
 export const CarouselImage = styled.img`
+  margin: 0.5rem 0;
 	width: 100%;
 	height: 100px;
-	object-fit: cover;
+	object-fit: center;
 	vertical-align: middle;
 `;
 
 export const CardInformation = styled.div`
   margin: 16px 12px;
   list-style: none;
-  font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,10 +117,10 @@ export const CardCategory = styled.li`
 `;
 
 export const CardDescription = styled.li`
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-align: center;
 `;
 
 export const CardButton = styled(Button)`
-	margin-top: 2.5rem;
+	margin-top: 1.5rem;
 `;

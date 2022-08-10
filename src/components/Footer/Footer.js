@@ -58,7 +58,7 @@ const Footer = () => {
             </FooterLink>
           </FooterLinksItems>
           <FooterLinksItems>
-            <FooterLinkTitle>Social Links</FooterLinkTitle>
+            <FooterLinkTitle>Socials</FooterLinkTitle>
             <FooterLink
               to="//www.facebook.com/groups/ourmentalhealthandus/"
               target="_blank"

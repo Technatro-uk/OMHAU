@@ -80,7 +80,7 @@ export const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 15rem;
+  width: 12rem;
   padding: 15px;
   justify-content: center;
   align-items: center;

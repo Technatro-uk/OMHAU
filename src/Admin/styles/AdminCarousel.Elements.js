@@ -54,23 +54,25 @@ export const CarouselCard = styled.div`
   border-radius: 5px;
   width: 300px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 2rem;
 
   @media screen and (max-width: 960px) {
-    width: 90%;
-
-    &:hover {
-      transform: none;
-    }
+    width: 200px;
   }
 `;
 
 export const CardImageContainer = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   border-radius: 100%;
-  margin: -60px auto 0;
+  margin: -30px auto 0;
+
+  @media screen and (max-width: 960px) {
+    width: 40px;
+    height: 40px;
+    margin: -20px auto 0;
+  }
 `;
 
 export const CardImage = styled.img`
@@ -83,12 +85,20 @@ export const CardImage = styled.img`
 export const CardInfo = styled.div`
   width: 200px;
   padding: 5px;
+
+  @media screen and (max-width: 960px) {
+    width: 150px;
+  }
 `;
 
 export const CardHeading = styled.h4`
   color: #333;
   text-align: center;
   padding: 5px;
+
+  @media screen and (max-width: 960px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const ArrowLink = styled(FaArrowRight)`

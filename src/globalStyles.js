@@ -36,12 +36,12 @@ export const Section = styled.section`
 	max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : 'auto')};
 	min-height: ${({ minHeight }) => (minHeight ? minHeight : 'auto')};
 
-	@media screen and (max-width: 480px) {
-		width: 350px;
-	}
-
 	@media screen and (max-width: 768px) {
 		padding: ${({ smPadding }) => (smPadding ? smPadding : '20px 0')};
+	}
+
+	@media screen and (max-width: 480px) {
+		width: 350px;
 	}
 `;
 
@@ -60,6 +60,35 @@ export const Row = styled.div`
 	max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : 'auto')};
 	min-height: ${({ minHeight }) => (minHeight ? minHeight : 'auto')};
 	flex-wrap: ${({ wrap }) => (wrap ? wrap : '')};
+`;
+
+export const Heading = styled.h2`
+	font-size: clamp(1rem, 12vw, 2.5rem);
+	margin: ${({ margin }) => (margin ? margin : '')};
+	margin-bottom: ${({ mb }) => (mb ? mb : '0')};
+	margin-top: ${({ mt }) => (mt ? mt : '0')};
+	color: ${({ inverse }) => (inverse ? 'dodgerblue' : '#fff')};
+	letter-spacing: 0.35rem;
+	line-height: 0.86;
+	text-align: center;
+	width: ${({ width }) => (width ? width : '100%')};
+
+	@media screen and (max-width: 960px) {
+		font-size: 1.2rem;
+		margin: 1rem 0 0;
+		letter-spacing: 0.15rem;
+	}
+`;
+
+export const TextWrapper = styled.span`
+	color: ${({ color }) => (color ? color : '')};
+	font-size: ${({ size }) => (size ? size : '')};
+	font-weight: ${({ weight }) => (weight ? weight : '')};
+	letter-spacing: ${({ spacing }) => (spacing ? spacing : '')};
+	padding: ${({ padding }) => (padding ? padding : '')};
+	margin: ${({ margin }) => (margin ? margin : '')};
+	margin-bottom: ${({ mb }) => (mb ? mb : '')};
+	margin-top: ${({ mt }) => (mt ? mt : '')};
 `;
 
 export const Button = styled.button`
@@ -82,27 +111,4 @@ export const Button = styled.button`
     @media screen and (max-width: 960px){
         width: 100%;
     }
-`;
-
-export const Heading = styled.h2`
-	font-size: clamp(1rem, 12vw, 2.5rem);
-	margin: ${({ margin }) => (margin ? margin : '')};
-	margin-bottom: ${({ mb }) => (mb ? mb : '0')};
-	margin-top: ${({ mt }) => (mt ? mt : '0')};
-	color: ${({ inverse }) => (inverse ? 'dodgerblue' : '#fff')};
-	letter-spacing: 0.35rem;
-	line-height: 0.86;
-	text-align: center;
-	width: ${({ width }) => (width ? width : '100%')};
-`;
-
-export const TextWrapper = styled.span`
-	color: ${({ color }) => (color ? color : '')};
-	font-size: ${({ size }) => (size ? size : '')};
-	font-weight: ${({ weight }) => (weight ? weight : '')};
-	letter-spacing: ${({ spacing }) => (spacing ? spacing : '')};
-	padding: ${({ padding }) => (padding ? padding : '')};
-	margin: ${({ margin }) => (margin ? margin : '')};
-	margin-bottom: ${({ mb }) => (mb ? mb : '')};
-	margin-top: ${({ mt }) => (mt ? mt : '')};
 `;

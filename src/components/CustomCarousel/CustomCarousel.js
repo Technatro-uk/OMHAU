@@ -16,12 +16,74 @@ import {
 } from "../styles/CustomCarousel.Elements";
 
 const CustomCarousel = ({ dataSource }) => {
+  const breakpoint = {
+    // Extra small screen / phone
+    es: 300,
+    // Very small screen / phone
+    xs: 450,
+    // Small screen / phone
+    sm: 576,
+    // Medium screen / tablet
+    md: 768,
+    // Large screen / desktop
+    lg: 992,
+    // Extra large screen / wide desktop
+    xl: 1200,
+  };
+
   const sliderSettings = {
+    mobileFirst: true,
     arrows: false,
     infinite: true,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    speed: 700,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: breakpoint.es,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: breakpoint.xs,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: breakpoint.sm,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: breakpoint.md,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: breakpoint.lg,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: breakpoint.xl,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+    ],
   };
 
   const [sliderRef, setSliderRef] = useState(null);

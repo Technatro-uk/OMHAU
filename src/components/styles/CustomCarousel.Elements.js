@@ -8,7 +8,8 @@ export const CarouselContainer = styled.div`
 	padding: 10px;
 
 	@media screen and (max-width: 768px) {
-		padding: 30px;
+    height: 50vh;
+		padding: 3rem 0.5rem 0;
 	}
 
 `;
@@ -20,9 +21,10 @@ export const SectionHeading = styled.h4`
 `;
 
 export const ButtonContainer = styled(Row)`
+
 	& svg {
 		opacity: 0.5;
-		margin: 0.5rem;
+		margin: 0.3rem 0.5rem;
 		cursor: pointer;
 	}
 
@@ -46,8 +48,6 @@ export const ReviewSlider = styled(Slider)`
 
 	.slick-slide {
 		display: flex;
-		justify-content: center;
-		outline: none;
 	}
 
 	.slick-list {
@@ -61,14 +61,6 @@ export const CarouselCard = styled.div`
   width: 350px;
   text-align: center;
   margin-top: 60px;
-
-  @media screen and (max-width: 960px) {
-    width: 90%;
-
-    &:hover {
-      transform: none;
-    }
-  }
 `;
 
 export const CardImageContainer = styled.div`
@@ -77,23 +69,40 @@ export const CardImageContainer = styled.div`
   overflow: hidden;
   border-radius: 100%;
   margin: -60px auto 0;
+
+  @media screen and (max-width: 960px) {
+    width: 50px;
+    height: 50px;
+    margin: -30px auto 0;
+  }
 `;
 
 export const CardImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+  background-color: #fff;
 `;
 
 export const CardInfo = styled.div`
   width: 200px;
   padding-bottom: 20px;
+
+  @media screen and (max-width: 960px) {
+    width: 150px;
+  }
 `;
 
 export const CardHeading = styled.h4`
   color: #333;
   text-align: center;
   padding-bottom: 20px;
+
+  @media screen and (max-width: 960px) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 1rem 0;
+  }
 `;
 
 export const ArrowLink = styled(FaArrowRight)`

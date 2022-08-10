@@ -1,36 +1,13 @@
-import React from 'react';
-import {
-    ResourcesContainer,
-	ResourceText,
-	ResourceTitle,
-	ResourceWrapper,
-	ResourceColumn,
-	ResourceImageWrapper,
-	ResourceName,
-	ResourceTextWrapper,
-} from '../styles/Resources.Elements';
-import { featuresData } from '../../Data/Resources/ResourcesData';
+import React, { Component } from 'react'
+import SupportCarousel from '../SupportCarousel/SupportCarousel'
+import { categories } from "../../Data/Admin/CategoryData";
 
-const Resources = () => {
-
+export default class Resources extends Component {
+  render() {
 	return (
-		<ResourcesContainer>
-				<ResourceTextWrapper>
-					<ResourceTitle>Resources</ResourceTitle>
-				</ResourceTextWrapper>
-				<ResourceWrapper>
-					{featuresData.map((el) => (
-						<ResourceColumn to={el.featureLink}>
-							<ResourceImageWrapper className={el.imgClass}>
-								{el.icon}
-							</ResourceImageWrapper>
-							<ResourceName>{el.name}</ResourceName>
-							<ResourceText>{el.description}</ResourceText>
-						</ResourceColumn>
-					))}
-				</ResourceWrapper>
-			</ResourcesContainer>
-	);
-};
-
-export default Resources;
+	  <>
+		<SupportCarousel data={categories} />
+	  </>
+	)
+  }
+}
